@@ -1,0 +1,44 @@
+@import "./styles/variables.scss";
+@import "./styles/mixins.scss";
+
+html {
+  box-sizing: border-box;
+  color: $text-color;
+  background-color: $bg-color;
+  font-family: $raleway-400;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
+a:visited {
+  color: inherit;
+}
+
+.wrapper {
+  margin: 0 auto;
+  margin-top: 19px;
+  border: 1px solid red;
+
+  @include respond(mobile) {
+    width: 327px;
+  }
+  @include respond(tablet) {
+    width: 678px;
+  }
+  @include respond(desktop) {
+    width: 1194px;
+  }
+}
