@@ -1,0 +1,28 @@
+@import "../../../styles/variables.scss";
+
+.container {
+  display: flex;
+  align-items: end;
+  gap: 19px;
+  font-size: 14px;
+  line-height: 17.5px;
+}
+
+.advantages {
+  width: 183px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  & > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+.accentNumber {
+  font-size: 36px;
+  font-family: "NewYorkerC 400";
+  color: $accent-color;
+}
