@@ -14,10 +14,11 @@ const ImageWithSlider = () => {
 
   return (
     <div>
-      <div className={`${styles.img}`}>
+      <div className={styles.img}>
         <img
-          className={`${styles.img}`}
           src={`./assets/imageWithSlider/woman_${image}.png`}
+          width={"488px"}
+          height={"604px"}
           alt="..."
         />
       </div>
@@ -25,7 +26,7 @@ const ImageWithSlider = () => {
         <div>
           <span className={styles.currentImg}>{image + 1}</span>/3
         </div>
-        <div className={`${styles[`sliderProgress${image}`]}`}></div>
+        <div className={` ${styles[`sliderProgress${image}`]}`}></div>
         <span className={styles.btnPrev} onClick={handlePrevClick} />
         <span className={styles.btnNext} onClick={handleNextClick} />
       </div>

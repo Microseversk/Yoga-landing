@@ -1,14 +1,16 @@
 @import "../../../styles/variables.scss";
 
-.transitioning {
-  transition: opacity 0.5s ease-in-out; /* Пример анимации изменения opacity в течение 0.5 секунд */
+@keyframes imgChanged {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .img {
   position: relative;
-  display: block;
-  width: 488px;
-  height: 604px;
 
   &::after {
     content: "";
