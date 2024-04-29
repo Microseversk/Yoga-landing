@@ -2,13 +2,14 @@
 
 .container {
   display: grid;
-  grid-template-columns: 579px auto;
+  grid-template-columns: auto auto;
+  font-size: 15px;
+  letter-spacing: 5%;
 }
 
 .h1 {
   font-family: "NewYorkerC 400";
   font-size: 84px;
-  letter-spacing: 0.7%;
   font-weight: 400;
   color: $accent-color;
   margin-top: 11px;
@@ -16,8 +17,6 @@
 
 .img {
   position: relative;
-  width: 488px;
-  height: 604px;
   justify-self: end;
 
   &::after {
@@ -33,12 +32,4 @@
 
     background-repeat: no-repeat;
   }
-}
-
-.flower {
-  position: absolute;
-  width: 229.85px;
-  height: 174.49px;
-  top: 400px;
-  left: 400px;
 }
