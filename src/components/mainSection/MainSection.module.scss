@@ -14,22 +14,3 @@
   color: $accent-color;
   margin-top: 11px;
 }
-
-.img {
-  position: relative;
-  justify-self: end;
-
-  &::after {
-    content: "";
-    position: absolute;
-    display: block;
-    top: -140px;
-    left: 250px;
-    z-index: -1;
-    width: 300.85px;
-    height: 300.49px;
-    background-image: url("/public/assets/flower.svg");
-
-    background-repeat: no-repeat;
-  }
-}

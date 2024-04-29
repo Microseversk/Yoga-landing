@@ -1,3 +1,4 @@
+import ImageWithSlider from "./ImageWithSlider/ImageWithSlider";
 import styles from "./MainSection.module.scss";
 import SignUpButton from "./sigUpButton/SignUpButton";
 
@@ -14,7 +15,7 @@ const Home = () => {
         </div>
 
         <div style={{ display: "flex", alignItems: "end", gap: "19px" }}>
-          <img src="./assets/picture(1).png" alt="..." />
+          <img src="./assets/woman.png" alt="..." />
           <div>
             <div>
               <span style={{ fontSize: "36px", fontFamily: "NewYorkerC 400" }}>
@@ -37,9 +38,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className={styles.img}>
-        <img src="./assets/picture.png" alt="..." />
-      </div>
+      <ImageWithSlider />
     </section>
   );
 };

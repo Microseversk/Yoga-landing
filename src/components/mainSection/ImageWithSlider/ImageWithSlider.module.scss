@@ -1,0 +1,120 @@
+@import "../../../styles/variables.scss";
+
+.transitioning {
+  transition: opacity 0.5s ease-in-out; /* Пример анимации изменения opacity в течение 0.5 секунд */
+}
+
+.img {
+  position: relative;
+  display: block;
+  width: 488px;
+  height: 604px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: -140px;
+    left: 250px;
+    z-index: -1;
+    width: 300.85px;
+    height: 300.49px;
+    background-image: url("/public/assets/flower.svg");
+    background-repeat: no-repeat;
+  }
+}
+
+.sliderContainer {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 23px;
+}
+
+%slider {
+  position: relative;
+  width: 341px;
+  border-bottom: 1px solid #cbc9c1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: $accent-color;
+  }
+}
+
+.sliderProgress0 {
+  @extend %slider;
+  &::after {
+    width: 33%;
+  }
+}
+
+.sliderProgress1 {
+  @extend %slider;
+  &::after {
+    width: 66%;
+  }
+}
+
+.sliderProgress2 {
+  @extend %slider;
+  &::after {
+    width: 100%;
+  }
+}
+
+.currentImg {
+  color: $accent-color;
+  font-size: 16px;
+  letter-spacing: 7%;
+  line-height: 16.44px;
+}
+
+%btnSlider {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid $accent-color;
+  transition: all 0.2s ease;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 19px;
+    height: 19px;
+  }
+
+  &:hover {
+    background-color: $accent-color;
+  }
+}
+
+.btnPrev {
+  @extend %btnSlider;
+
+  &::after {
+    background-image: url("/public/assets/arrows/arrow-left.svg");
+  }
+  &:hover::after {
+    background-image: url("/public/assets/arrows/arrow-left-white.svg");
+  }
+}
+
+.btnNext {
+  @extend %btnSlider;
+
+  &::after {
+    background-image: url("/public/assets/arrows/arrow-right.svg");
+  }
+  &:hover::after {
+    background-image: url("/public/assets/arrows/arrow-right-white.svg");
+  }
+}
