@@ -21,7 +21,7 @@
     z-index: -1;
     width: 300.85px;
     height: 300.49px;
-    background-image: url("/public/assets/flower.svg");
+    background-image: url("/assets/flower.svg");
     background-repeat: no-repeat;
   }
 }
@@ -103,10 +103,10 @@
   @extend %btnSlider;
 
   &::after {
-    background-image: url("/public/assets/arrows/arrow-left.svg");
+    background-image: url("/assets/arrows/arrow-left.svg");
   }
   &:hover::after {
-    background-image: url("/public/assets/arrows/arrow-left-white.svg");
+    background-image: url("/assets/arrows/arrow-left-white.svg");
   }
 }
 
@@ -114,9 +114,9 @@
   @extend %btnSlider;
 
   &::after {
-    background-image: url("/public/assets/arrows/arrow-right.svg");
+    background-image: url("/assets/arrows/arrow-right.svg");
   }
   &:hover::after {
-    background-image: url("/public/assets/arrows/arrow-right-white.svg");
+    background-image: url("/assets/arrows/arrow-right-white.svg");
   }
 }

@@ -8,6 +8,10 @@ html {
   font-family: $raleway-400;
 }
 
+a {
+  color: $text-color;
+}
+
 *,
 *::after,
 *::before {
