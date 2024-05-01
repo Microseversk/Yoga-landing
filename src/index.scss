@@ -35,14 +35,15 @@ a:visited {
   margin: 0 auto;
   margin-top: 19px;
   //border: 1px solid red;
+  overflow: hidden;
 
   @include respond(mobile) {
-    width: 327px;
+    max-width: 327px;
   }
   @include respond(tablet) {
-    width: 678px;
+    max-width: 678px;
   }
   @include respond(desktop) {
-    width: 1194px;
+    max-width: 1194px;
   }
 }

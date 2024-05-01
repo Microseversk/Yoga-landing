@@ -1,7 +1,17 @@
+@import "../../../styles/mixins.scss";
+
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  column-gap: 6px;
+  column-gap: 5px;
   font-size: 15px;
+
+  @include respond(tablet) {
+    column-gap: 8px;
+  }
+  @include respond(mobile) {
+    column-gap: 5px;
+    font-size: 12px;
+  }
 }
