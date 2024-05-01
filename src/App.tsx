@@ -6,9 +6,7 @@ function App() {
   return (
     <main className="wrapper">
       <Navbar />
-      <div style={{ marginTop: "109px" }}>
-        <Home />
-      </div>
+      <Home />
     </main>
   );
 }

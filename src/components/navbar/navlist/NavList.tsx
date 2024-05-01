@@ -1,8 +1,12 @@
+import { useContext } from "react";
+import { NavbarContext } from "../Navbar";
 import styles from "./NavList.module.scss";
 
 const NavList = () => {
+  const { isOpen } = useContext(NavbarContext);
+
   return (
-    <ul className={styles.list}>
+    <ul className={`${styles.list} ${isOpen ? styles.active : styles.hide}`}>
       <li>
         <a href="#"> ПРОГРАММЫ</a>
       </li>

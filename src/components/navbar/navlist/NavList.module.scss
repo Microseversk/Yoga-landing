@@ -2,17 +2,73 @@
 @import "../../../styles/mixins.scss";
 .list {
   display: none;
-  align-items: center;
-  justify-content: space-between;
-  column-gap: 26px;
-  font-size: 13px;
-  letter-spacing: 5%;
-
-  & > li > a:hover {
-    color: $accent-color;
-  }
+  position: absolute;
+  flex-direction: column;
+  align-items: end;
+  row-gap: 10px;
+  z-index: 10;
+  background-color: $accent-color;
+  padding: 30px 30px;
+  color: white;
+  width: auto;
+  border-radius: 10px 0px 10px 10px;
 
   @include respond(desktop) {
-    display: flex;
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 26px;
+    align-items: center;
+    background-color: inherit;
+    color: $text-color;
+    font-size: 13px;
+    opacity: 1 !important;
+    letter-spacing: 5%;
+
+    & > li > a:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+.hide {
+  display: flex;
+  animation: hide 0.7s forwards;
+}
+
+.active {
+  display: flex;
+  animation: open 0.7s forwards;
+}
+
+@keyframes open {
+  0% {
+    top: 40px;
+    right: 0px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 50px;
+    right: 10px;
+  }
+}
+
+@keyframes hide {
+  0% {
+    top: 50px;
+    right: 10px;
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    top: 40px;
+    right: 0px;
+    opacity: 0;
   }
 }
