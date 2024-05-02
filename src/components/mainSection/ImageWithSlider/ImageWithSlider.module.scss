@@ -15,12 +15,11 @@
   &::after {
     content: "";
     position: absolute;
-    display: block;
-    top: -140px;
-    left: 250px;
+    left: 240px;
+    top: -150px;
     z-index: -1;
-    width: 300.85px;
-    height: 300.49px;
+    width: 400px;
+    height: 400px;
     background-image: url("/assets/flower.svg");
     background-repeat: no-repeat;
   }

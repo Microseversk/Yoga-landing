@@ -35,7 +35,6 @@ a:visited {
   margin: 0 auto;
   margin-top: 19px;
   //border: 1px solid red;
-  overflow: hidden;
 
   @include respond(mobile) {
     max-width: 327px;

@@ -2,7 +2,6 @@
 @import "../../styles/mixins.scss";
 
 .container {
-  position: relative;
   display: grid;
   grid-template-columns: auto auto;
   font-size: 15px;
@@ -16,9 +15,9 @@
     margin-top: 52px;
   }
 
-  // & > * {
-  //   border: 1px solid black;
-  // }
+  & > * {
+    //border: 1px solid black;
+  }
 }
 
 .h1 {
