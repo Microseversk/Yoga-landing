@@ -7,7 +7,7 @@ import Phone from "./phone/Phone";
 
 export const NavbarContext = createContext({
   status: "",
-  toggleOpen: (newStatus: string) => {}, // Пустая функция по умолчанию
+  toggleOpen: (_newStatus: string) => {}, // Пустая функция по умолчанию
 });
 
 const Navbar = () => {
