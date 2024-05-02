@@ -5,7 +5,6 @@
   display: grid;
   grid-template-columns: auto auto;
   font-size: 15px;
-  letter-spacing: 5%;
   margin-top: 115px;
 
   @include respond(tablet) {
@@ -24,6 +23,16 @@
   font-family: "NewYorkerC 400";
   font-size: 84px;
   font-weight: 400;
+  line-height: 100.8px;
   color: $accent-color;
   margin-top: 11px;
+
+  @include respond(tablet) {
+    font-size: 54px;
+    line-height: 59.4px;
+  }
+  @include respond(mobile) {
+    font-size: 48px;
+    line-height: 52.8px;
+  }
 }
