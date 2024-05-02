@@ -3,10 +3,11 @@ import { NavbarContext } from "../Navbar";
 import styles from "./NavList.module.scss";
 
 const NavList = () => {
-  const { isOpen } = useContext(NavbarContext);
+  const { status } = useContext(NavbarContext);
+  console.log("@" + status);
 
   return (
-    <ul className={`${styles.list} ${isOpen ? styles.active : styles.hide}`}>
+    <ul className={`${styles.list}  ${styles[status]}`}>
       <li>
         <a href="#"> ПРОГРАММЫ</a>
       </li>

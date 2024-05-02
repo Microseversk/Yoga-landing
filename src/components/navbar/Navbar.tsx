@@ -6,19 +6,19 @@ import NavList from "./navlist/NavList";
 import Phone from "./phone/Phone";
 
 export const NavbarContext = createContext({
-  isOpen: false,
-  toggleOpen: () => {}, // Пустая функция по умолчанию
+  status: "",
+  toggleOpen: (newStatus: string) => {}, // Пустая функция по умолчанию
 });
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState("");
 
-  const toggleOpen = () => {
-    setIsOpen(!isOpen);
+  const toggleOpen = (newStatus: string) => {
+    setIsOpen(newStatus);
   };
 
   return (
-    <NavbarContext.Provider value={{ isOpen, toggleOpen }}>
+    <NavbarContext.Provider value={{ status: isOpen, toggleOpen }}>
       <header className={styles.header}>
         <Logo />
         <NavList />
