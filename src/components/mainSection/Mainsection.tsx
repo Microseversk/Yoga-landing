@@ -8,17 +8,11 @@ const Home = () => {
     <section className={styles.container}>
       <div>
         <h1 className={styles.h1}>Студия йоги и пилатеса</h1>
-        <div
-          style={{
-            display: "flex",
-            marginTop: "56px",
-          }}
-        >
-          <span className={styles.p}>
-            Здесь мы поможем вам держать тело в тонусе, а душу - в гармонии.
-          </span>
-          <SignUpButton />
-        </div>
+
+        <span className={styles.p}>
+          Здесь мы поможем вам держать тело в тонусе, а душу - в гармонии.
+        </span>
+        <SignUpButton />
         <Advantages />
       </div>
       <ImageWithSlider />

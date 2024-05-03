@@ -3,7 +3,7 @@
 
 .container {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr auto;
   font-size: 15px;
   margin-top: 115px;
 
@@ -11,11 +11,13 @@
     margin-top: 77px;
   }
   @include respond(mobile) {
+    display: flex;
+    flex-direction: column;
     margin-top: 52px;
   }
 
   & > * {
-    //border: 1px solid black;
+    border: 1px solid black;
   }
 }
 
@@ -23,19 +25,20 @@
   font-family: "NewYorkerC 400";
   font-size: 84px;
   font-weight: 400;
-  letter-spacing: 0.7%;
   color: $accent-color;
 
   @include respond(tablet) {
     font-size: 54px;
   }
   @include respond(mobile) {
-    font-size: 52.8px;
+    font-size: 52px;
     text-align: center;
+    width: 339px;
   }
 }
 
 .p {
+  display: block;
   width: 276px;
   font-size: 16px;
   line-height: 20.8px;
