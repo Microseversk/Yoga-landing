@@ -22,9 +22,7 @@ const Navbar = () => {
       <header className={styles.header}>
         <Logo />
         <NavList />
-        <div
-          style={{ display: "flex", columnGap: "35px", alignItems: "center" }}
-        >
+        <div className={styles.headerRightSide}>
           <Phone />
           <Burger />
         </div>

@@ -24,6 +24,25 @@
   font-family: "NewYorkerC 400";
   font-size: 84px;
   font-weight: 400;
+  letter-spacing: 0.7%;
   color: $accent-color;
-  margin-top: 11px;
+
+  @include respond(tablet) {
+    font-size: 54px;
+  }
+  @include respond(mobile) {
+    font-size: 52.8px;
+    text-align: center;
+  }
+}
+
+.p {
+  width: 276px;
+  font-size: 16px;
+  line-height: 20.8px;
+
+  @include respond(mobile) {
+    width: 296px;
+    text-align: center;
+  }
 }

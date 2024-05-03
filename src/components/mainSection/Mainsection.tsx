@@ -14,7 +14,7 @@ const Home = () => {
             marginTop: "56px",
           }}
         >
-          <span style={{ width: "276px", fontSize: "16px" }}>
+          <span className={styles.p}>
             Здесь мы поможем вам держать тело в тонусе, а душу - в гармонии.
           </span>
           <SignUpButton />

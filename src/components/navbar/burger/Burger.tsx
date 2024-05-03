@@ -7,6 +7,7 @@ const Burger = () => {
 
   return (
     <div
+      className={`${styles.burger}`}
       onClick={() => {
         if (status === "") {
           toggleOpen("active");
@@ -16,7 +17,6 @@ const Burger = () => {
           toggleOpen("active");
         }
       }}
-      className={`${styles.burger}`}
     >
       <div></div>
       <div></div>
