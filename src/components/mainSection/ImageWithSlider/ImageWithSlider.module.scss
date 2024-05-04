@@ -38,11 +38,8 @@
     background-repeat: no-repeat;
 
     @include respond(tablet) {
-      width: 480px;
-
-      left: 90px;
-      top: -120px;
-      transform: scale(0.5);
+      width: 300px;
+      transform: scale(0.7) translateX(-220px);
     }
     @include respond(mobile) {
       display: none;
