@@ -4,21 +4,29 @@
 .container {
   display: grid;
   grid-template-columns: auto auto;
+  grid-template-areas:
+    "h1 h1 img img"
+    "p p img img"
+    "btn btn img img"
+    "adv adv img img";
   font-size: 15px;
   margin-top: 104px;
 
   @include respond(tablet) {
-    grid-template-columns: 385px 310px;
     margin-top: 77px;
   }
   @include respond(mobile) {
-    display: flex;
-    flex-direction: column;
     margin-top: 52px;
+    grid-template-areas:
+      "h1"
+      "btn"
+      "img"
+      "p"
+      "adv";
   }
 
   & > * {
-    border: 1px solid black;
+    //border: 1px solid black;
   }
 }
 
@@ -29,7 +37,7 @@
   color: $accent-color;
 
   @include respond(tablet) {
-    font-size: 54px;
+    font-size: 50px;
   }
   @include respond(mobile) {
     font-size: 52px;
@@ -43,7 +51,6 @@
   width: 276px;
   font-size: 16px;
   margin-top: 56px;
-
   line-height: 20.8px;
 
   @include respond(tablet) {
@@ -54,5 +61,22 @@
     width: 296px;
     text-align: center;
     margin-top: 35px;
+  }
+}
+
+.btnContainer {
+  grid-area: btn;
+  justify-self: end;
+  position: relative;
+  margin-right: 20%;
+  margin-top: 20px;
+
+  @include respond(tablet) {
+    margin-right: 15%;
+    margin-top: 10%;
+  }
+
+  @include respond(mobile) {
+    margin-right: 15px;
   }
 }

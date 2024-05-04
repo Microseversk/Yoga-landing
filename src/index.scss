@@ -34,10 +34,10 @@ a:visited {
 .wrapper {
   margin: 0 auto;
   margin-top: 19px;
-  border: 1px solid red;
+  //border: 1px solid red;
 
   @include respond(mobile) {
-    max-width: 327px;
+    max-width: 345px;
   }
   @include respond(tablet) {
     max-width: 697px;

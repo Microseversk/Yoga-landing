@@ -16,6 +16,18 @@
   color: white;
   cursor: pointer;
 
+  @include respond(mobile) {
+    position: absolute;
+
+    right: 25%;
+
+    z-index: 1;
+
+    &::after {
+      display: none;
+    }
+  }
+
   &::after {
     content: "";
     position: absolute;
