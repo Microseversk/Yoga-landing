@@ -15,11 +15,11 @@
   width: 488px;
   height: 650px;
   @include respond(tablet) {
-    width: 100%;
+    width: 310px;
     height: 418px;
   }
   @include respond(mobile) {
-    width: 100%;
+    width: 327px;
     height: 380px;
   }
 }

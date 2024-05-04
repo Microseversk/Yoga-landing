@@ -3,11 +3,12 @@
 
 .container {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: auto auto;
   font-size: 15px;
-  margin-top: 115px;
+  margin-top: 104px;
 
   @include respond(tablet) {
+    grid-template-columns: 385px 310px;
     margin-top: 77px;
   }
   @include respond(mobile) {
@@ -25,6 +26,7 @@
   font-family: "NewYorkerC 400";
   font-size: 84px;
   font-weight: 400;
+
   color: $accent-color;
 
   @include respond(tablet) {
@@ -41,10 +43,17 @@
   display: block;
   width: 276px;
   font-size: 16px;
+  margin-top: 56px;
+
   line-height: 20.8px;
+
+  @include respond(tablet) {
+    margin-top: 35px;
+  }
 
   @include respond(mobile) {
     width: 296px;
     text-align: center;
+    margin-top: 35px;
   }
 }
