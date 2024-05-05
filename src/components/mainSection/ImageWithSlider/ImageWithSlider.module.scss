@@ -6,6 +6,9 @@
   position: relative;
   width: 488px;
   height: 650px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: background-image 0.4s;
   @include respond(tablet) {
     width: 100%;
     height: 418px;
