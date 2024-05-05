@@ -15,3 +15,8 @@
     }
   }
 }
+
+//Progress must be 0 to 100
+@mixin setSliderProgress($progress) {
+  width: $progress + "%";
+}

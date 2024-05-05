@@ -13,13 +13,12 @@
   border-bottom: 2px solid #cbc9c1;
   flex-grow: 1;
   position: relative;
-  &::after {
-    content: "";
-    position: absolute;
-    height: 2px;
-    background-color: $accent-color;
-    width: 10%;
-  }
+}
+
+.progress {
+  position: absolute;
+  height: 2px;
+  background-color: $accent-color;
 }
 
 .btn {

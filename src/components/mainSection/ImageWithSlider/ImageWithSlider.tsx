@@ -22,10 +22,12 @@ const ImageWithSlider = () => {
       />
 
       <div className={styles.sliderContainer}>
+        <span>{image + 1}/3</span>
         <Slider
-          buttonPostion={"right"}
+          buttonPosition={"right"}
           onPrev={handlePrevClick}
           onNext={handleNextClick}
+          progress={((image + 1) * 100) / 3}
         />
       </div>
     </div>
