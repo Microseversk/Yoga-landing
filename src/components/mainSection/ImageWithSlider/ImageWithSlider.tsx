@@ -14,13 +14,11 @@ const ImageWithSlider = () => {
 
   return (
     <div>
-      <div className={styles.flower}>
-        <img
-          className={styles.img}
-          src={`./assets/imageWithSlider/woman_${image}.png`}
-          alt="..."
-        />
-      </div>
+      <img
+        className={styles.img}
+        src={`./assets/imageWithSlider/woman_${image}.png`}
+        alt="..."
+      />
       <div className={styles.sliderContainer}>
         <div>
           <span className={styles.currentImg}>{image + 1}</span>/3

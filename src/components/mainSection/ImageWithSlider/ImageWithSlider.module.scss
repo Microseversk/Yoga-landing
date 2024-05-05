@@ -24,29 +24,6 @@
   }
 }
 
-.flower {
-  position: relative;
-  &::after {
-    content: "";
-    position: absolute;
-    left: 240px;
-    top: -150px;
-    z-index: -1;
-    width: 400px;
-    height: 400px;
-    background-image: url("/assets/flower.svg");
-    background-repeat: no-repeat;
-
-    @include respond(tablet) {
-      width: 300px;
-      transform: scale(0.7) translateX(-220px);
-    }
-    @include respond(mobile) {
-      display: none;
-    }
-  }
-}
-
 .sliderContainer {
   display: flex;
   justify-items: center;
