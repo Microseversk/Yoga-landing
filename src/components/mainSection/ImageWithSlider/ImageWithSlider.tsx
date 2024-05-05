@@ -15,11 +15,20 @@ const ImageWithSlider = () => {
 
   return (
     <div>
-      <img
+      {/* <img
         className={styles.img}
         src={`./assets/imageWithSlider/woman_${image}.png`}
         alt="..."
-      />
+      /> */}
+      <div
+        className={styles.img}
+        style={{
+          backgroundImage: `url(./assets/imageWithSlider/woman_${image}.png)`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "contain",
+          transition: "background-image 0.4s",
+        }}
+      ></div>
 
       <div className={styles.sliderContainer}>
         <span>{image + 1}/3</span>

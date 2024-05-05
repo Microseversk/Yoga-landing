@@ -21,7 +21,6 @@
   justify-items: center;
   align-items: center;
   gap: 10px;
-  margin-top: 23px;
   @include respond(tablet) {
     gap: 5px;
   }
