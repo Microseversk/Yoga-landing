@@ -1,15 +1,6 @@
 @import "../../../styles/variables.scss";
 @import "../../../styles/mixins.scss";
 
-@keyframes imgChanged {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 .img {
   z-index: -2;
   position: relative;
@@ -39,92 +30,9 @@
   }
 }
 
-%slider {
-  position: relative;
-  border-bottom: 2px solid #cbc9c1;
-  width: 341px;
-
-  &::after {
-    content: "";
-    position: absolute;
-    height: 2px;
-    background-color: $accent-color;
-  }
-  @include respond(tablet) {
-    width: 194px;
-  }
-}
-
-.sliderProgress0 {
-  @extend %slider;
-  &::after {
-    width: 33%;
-  }
-}
-
-.sliderProgress1 {
-  @extend %slider;
-  &::after {
-    width: 66%;
-  }
-}
-
-.sliderProgress2 {
-  @extend %slider;
-  &::after {
-    width: 100%;
-  }
-}
-
 .currentImg {
   color: $accent-color;
   font-size: 16px;
   letter-spacing: 7%;
   line-height: 16.44px;
-}
-
-%btnSlider {
-  position: relative;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  border: 1px solid $accent-color;
-  transition: all 0.2s ease;
-  cursor: pointer;
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 19px;
-    height: 19px;
-  }
-
-  &:hover {
-    background-color: $accent-color;
-  }
-}
-
-.btnPrev {
-  @extend %btnSlider;
-
-  &::after {
-    background-image: url("/assets/arrows/arrow-left.svg");
-  }
-  &:hover::after {
-    background-image: url("/assets/arrows/arrow-left-white.svg");
-  }
-}
-
-.btnNext {
-  @extend %btnSlider;
-
-  &::after {
-    background-image: url("/assets/arrows/arrow-right.svg");
-  }
-  &:hover::after {
-    background-image: url("/assets/arrows/arrow-right-white.svg");
-  }
 }

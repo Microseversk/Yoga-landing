@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Slider from "../../shared/slider/Slider";
 import styles from "./ImageWithSlider.module.scss";
 
 const ImageWithSlider = () => {
@@ -19,13 +20,13 @@ const ImageWithSlider = () => {
         src={`./assets/imageWithSlider/woman_${image}.png`}
         alt="..."
       />
+
       <div className={styles.sliderContainer}>
-        <div>
-          <span className={styles.currentImg}>{image + 1}</span>/3
-        </div>
-        <div className={` ${styles[`sliderProgress${image}`]}`}></div>
-        <span className={styles.btnPrev} onClick={handlePrevClick} />
-        <span className={styles.btnNext} onClick={handleNextClick} />
+        <Slider
+          buttonPostion={"right"}
+          onPrev={handlePrevClick}
+          onNext={handleNextClick}
+        />
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ function App() {
   return (
     <main className="wrapper">
       <Navbar />
+
       <Home />
       <DirectionsInSub />
     </main>
