@@ -9,7 +9,7 @@ const Home = () => {
       <div style={{ gridArea: "h1" }}>
         <h1 className={styles.h1}>Студия йоги и пилатеса</h1>
       </div>
-      <div style={{ gridArea: "p" }}>
+      <div className={styles.pContainer}>
         <span className={styles.p}>
           Здесь мы поможем вам держать тело в тонусе, а душу - в гармонии.
         </span>
@@ -17,10 +17,10 @@ const Home = () => {
       <div className={styles.btnContainer}>
         <SignUpButton />
       </div>
-      <div style={{ gridArea: "adv" }}>
+      <div className={styles.advContainer}>
         <Advantages />
       </div>
-      <div style={{ gridArea: "img", alignSelf: "center" }}>
+      <div className={styles.imgContainer}>
         <ImageWithSlider />
       </div>
     </section>

@@ -4,7 +4,7 @@
 .container {
   position: relative;
   display: grid;
-  grid-template-columns: auto auto 244px 244px;
+  grid-template-columns: auto auto;
   grid-template-areas:
     "h1 h1 img img"
     "p p img img"
@@ -17,7 +17,7 @@
     content: "";
     position: absolute;
 
-    z-index: -1;
+    z-index: -3;
     right: -25px;
 
     top: -150px;
@@ -38,7 +38,7 @@
   }
 
   @include respond(tablet) {
-    margin-top: 77px;
+    margin-top: 75px;
     grid-template-columns: auto auto 155px 155px;
   }
   @include respond(mobile) {
@@ -49,10 +49,6 @@
       "img"
       "p"
       "adv";
-  }
-
-  & > * {
-    //border: 1px solid black;
   }
 }
 
@@ -75,17 +71,10 @@
   display: block;
   width: 276px;
   font-size: 16px;
-  margin-top: 56px;
   line-height: 20.8px;
-
-  @include respond(tablet) {
-    margin-top: 35px;
-  }
-
   @include respond(mobile) {
     width: 296px;
     text-align: center;
-    margin-top: 35px;
   }
 }
 
@@ -97,11 +86,38 @@
   margin-top: 20px;
 
   @include respond(tablet) {
-    margin-right: 15%;
-    margin-top: 10%;
+    margin-right: 10%;
+    margin-top: 6%;
   }
 
   @include respond(mobile) {
     margin-right: 15px;
   }
+}
+
+.pContainer {
+  grid-area: p;
+  margin-top: 56px;
+
+  @include respond(tablet) {
+    margin-top: 32px;
+  }
+
+  @include respond(mobile) {
+    margin-top: 32px;
+    justify-self: center;
+  }
+}
+
+.advContainer {
+  grid-area: adv;
+
+  @include respond(mobile) {
+    margin-top: 48px;
+  }
+}
+
+.imgContainer {
+  grid-area: img;
+  align-self: flex-end;
 }
