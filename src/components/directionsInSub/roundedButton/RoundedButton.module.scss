@@ -1,0 +1,32 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.roundedButton {
+  height: 50px;
+  font-family: $raleway-400;
+  font-size: 14px;
+  background-color: inherit;
+  padding: 16px 32px 16px 32px;
+  border: 1px solid #d2cfc7;
+  border-radius: 30px;
+  text-align: center;
+  transition: all 0.25s ease;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $accent-color;
+    color: $bg-color;
+  }
+
+  @include respond(tablet) {
+    height: 47px;
+    padding: 16px 20px 16px 20px;
+    font-size: 12px;
+  }
+
+  @include respond(mobile) {
+    height: 39px;
+    padding: 10px 20px 10px 20px;
+    font-size: 12px;
+  }
+}

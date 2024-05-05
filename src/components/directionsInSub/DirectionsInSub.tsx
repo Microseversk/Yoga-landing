@@ -1,4 +1,5 @@
 import styles from "./DirectionsInSub.module.scss";
+import RoundedButton from "./roundedButton/RoundedButton";
 
 const DirectionsInSub = () => {
   return (
@@ -8,6 +9,10 @@ const DirectionsInSub = () => {
         <p className={styles.p}>
           Не определились с направлением? Мы подскажем!
         </p>
+      </div>
+      <div>
+        <RoundedButton>Все направления</RoundedButton>
+        <RoundedButton>Все направления</RoundedButton>
       </div>
     </section>
   );
