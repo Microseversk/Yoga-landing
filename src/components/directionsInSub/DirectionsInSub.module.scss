@@ -116,9 +116,11 @@
   grid-area: img;
   width: 346px;
   height: 493px;
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   transition: background-image 0.3s;
+  border-radius: 173px 173px 192.5px 0px;
+  background-repeat: no-repeat;
 
   @include respond(tablet) {
     width: 312px;
@@ -129,7 +131,8 @@
     width: 327px;
     height: 258px;
     margin-top: 24px;
-    background-size: contain;
+
+    border-radius: 129px 0px 0px 0px;
   }
 }
 
