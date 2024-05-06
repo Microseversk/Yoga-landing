@@ -46,7 +46,14 @@ const Slider = (props: SliderProps) => {
           />
         </svg>
       </button>
-      {props.buttonPosition === "left" && <div className={styles.slider}></div>}
+      {props.buttonPosition === "left" && (
+        <div className={styles.slider}>
+          <span
+            className={styles.progress}
+            style={{ width: `${props.progress}%`, transition: "width 0.4s" }}
+          ></span>
+        </div>
+      )}
     </div>
   );
 };

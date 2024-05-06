@@ -62,36 +62,90 @@
 }
 
 .bottomContent {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-areas: "btns img info";
   margin-top: 72px;
+  justify-content: space-between;
+  grid-auto-flow: column;
+
+  @include respond(desktop) {
+    grid-template-columns: 319px 346px 407px;
+  }
 
   @include respond(tablet) {
+    grid-template-areas:
+      "btns btns"
+      "img info";
     margin-top: 56px;
+    grid-template-columns: 1fr;
   }
   @include respond(mobile) {
+    grid-template-areas:
+      "btns"
+      "img"
+      "info";
+
     margin-top: 56px;
   }
 }
 
 .btnsContainer {
+  grid-area: btns;
   display: flex;
-  width: 319px;
   gap: 8px;
-  flex-wrap: wrap;
+  height: fit-content;
   white-space: nowrap;
+  flex-wrap: wrap;
+
   @include respond(tablet) {
-    width: 100%;
     justify-content: center;
   }
 
   @include respond(mobile) {
     flex-wrap: nowrap;
-    overflow: auto;
+    overflow-x: auto;
   }
 
   &::-webkit-scrollbar {
     display: none;
   }
   scrollbar-width: 0px;
+}
+
+.imgContainer {
+  grid-area: img;
+  width: 346px;
+  height: 493px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: background-image 0.3s;
+
+  @include respond(tablet) {
+    width: 312px;
+    height: 422px;
+    margin-top: 32px;
+  }
+  @include respond(mobile) {
+    width: 327px;
+    height: 258px;
+    margin-top: 24px;
+    background-size: contain;
+  }
+}
+
+.infoContainer {
+  grid-area: info;
+  width: 407px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include respond(tablet) {
+    width: 338px;
+    margin-top: 32px;
+  }
+  @include respond(mobile) {
+    width: 100%;
+    margin-top: 34px;
+  }
 }
