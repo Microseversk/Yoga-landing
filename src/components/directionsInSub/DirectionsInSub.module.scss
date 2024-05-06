@@ -60,3 +60,38 @@
     row-gap: 32px;
   }
 }
+
+.bottomContent {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 72px;
+
+  @include respond(tablet) {
+    margin-top: 56px;
+  }
+  @include respond(mobile) {
+    margin-top: 56px;
+  }
+}
+
+.btnsContainer {
+  display: flex;
+  width: 319px;
+  gap: 8px;
+  flex-wrap: wrap;
+  white-space: nowrap;
+  @include respond(tablet) {
+    width: 100%;
+    justify-content: center;
+  }
+
+  @include respond(mobile) {
+    flex-wrap: nowrap;
+    overflow: auto;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  scrollbar-width: 0px;
+}

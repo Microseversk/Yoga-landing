@@ -1,10 +1,15 @@
+import { useEffect, useState } from "react";
 import useGetDirections from "../../hooks/useGetDirections";
 import styles from "./DirectionsInSub.module.scss";
 import RoundedButton from "./roundedButton/RoundedButton";
 
 const DirectionsInSub = () => {
   const { directions } = useGetDirections();
-  console.log(directions);
+  const [currentDirection, setCurrentDirection] = useState(1);
+
+  useEffect(() => {
+    console.log("render");
+  }, []);
 
   return (
     <section className={styles.container}>
@@ -14,9 +19,20 @@ const DirectionsInSub = () => {
           Не определились с направлением? Мы подскажем!
         </p>
       </div>
-      <div>
-        <RoundedButton>Все направления</RoundedButton>
-        <RoundedButton>Все направления</RoundedButton>
+      <div className={styles.bottomContent}>
+        <div className={styles.btnsContainer}>
+          {directions.map((direction) => {
+            return (
+              <RoundedButton
+                onClick={() => setCurrentDirection(direction.id)}
+                key={direction.id}
+                selected={direction.id == currentDirection}
+              >
+                {direction.title}
+              </RoundedButton>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
