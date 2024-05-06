@@ -1,7 +1,11 @@
+import useGetDirections from "../../hooks/useGetDirections";
 import styles from "./DirectionsInSub.module.scss";
 import RoundedButton from "./roundedButton/RoundedButton";
 
 const DirectionsInSub = () => {
+  const { directions } = useGetDirections();
+  console.log(directions);
+
   return (
     <section className={styles.container}>
       <div className={styles.topContent}>
