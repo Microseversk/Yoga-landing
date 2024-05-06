@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useGetDirections from "../../hooks/useGetDirections";
 import { Direction } from "../../services/directions";
 import Slider from "../shared/slider/Slider";
@@ -8,6 +8,7 @@ import RoundedButton from "./roundedButton/RoundedButton";
 const DirectionsInSub = () => {
   const { directions, isLoading } = useGetDirections();
   const [currentDirection, setCurrentDirection] = useState<Direction | null>();
+  const btnsContainer = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (!isLoading && directions.length > 0) {
@@ -29,10 +30,11 @@ const DirectionsInSub = () => {
         </p>
       </div>
       <div className={styles.bottomContent}>
-        <div className={styles.btnsContainer}>
+        <div className={styles.btnsContainer} ref={btnsContainer}>
           {directions.map((direction) => {
             return (
               <RoundedButton
+                id={"button_" + direction.id.toString()}
                 onClick={() => {
                   setCurrentDirection(direction);
                 }}
@@ -64,11 +66,26 @@ const DirectionsInSub = () => {
                     directions.length
                 ]
               );
+              btnsContainer.current?.scrollTo({
+                left:
+                  currentDirection?.id!! == 1
+                    ? btnsContainer?.current!!.scrollLeft + 1000000
+                    : btnsContainer?.current!!.scrollLeft - 100,
+                behavior: "smooth",
+              });
             }}
             onNext={() => {
               setCurrentDirection(
                 directions[currentDirection?.id!! % directions.length]
               );
+              console.log(currentDirection?.id!! == directions.length);
+              btnsContainer.current?.scrollTo({
+                left:
+                  currentDirection?.id!! == directions.length
+                    ? btnsContainer?.current!!.scrollLeft - 1000000
+                    : btnsContainer?.current!!.scrollLeft + 100,
+                behavior: "smooth",
+              });
             }}
             progress={(currentDirection?.id!! * 100) / directions.length}
           />

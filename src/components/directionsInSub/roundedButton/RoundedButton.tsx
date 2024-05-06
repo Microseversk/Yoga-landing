@@ -1,6 +1,7 @@
 import styles from "./RoundedButton.module.scss";
 
 interface RoundedButtonProps {
+  id?: string;
   children?: React.ReactNode;
   onClick?: () => void;
   className?: string;
@@ -10,6 +11,7 @@ interface RoundedButtonProps {
 const RoundedButton = (props: RoundedButtonProps) => {
   return (
     <button
+      id={props.id}
       onClick={props.onClick}
       className={
         props.selected
