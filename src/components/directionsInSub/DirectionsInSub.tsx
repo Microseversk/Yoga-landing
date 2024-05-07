@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import useGetDirections from "../../hooks/useGetDirections";
 import { Direction } from "../../services/directions";
+import RoundedButton from "../shared/roundedButton/RoundedButton";
 import Slider from "../shared/slider/Slider";
 import styles from "./DirectionsInSub.module.scss";
-import RoundedButton from "./roundedButton/RoundedButton";
 
 const DirectionsInSub = () => {
   const { directions, isLoading } = useGetDirections();
@@ -61,7 +61,6 @@ const DirectionsInSub = () => {
           {directions.map((direction) => {
             return (
               <RoundedButton
-                id={"button_" + direction.id.toString()}
                 onClick={() => {
                   setCurrentDirection(direction);
                 }}
@@ -99,12 +98,14 @@ const DirectionsInSub = () => {
                 currentDirection?.description.replace("\n", "<br><br>") || "",
             }}
           ></p>
-          <Slider
-            buttonPosition={"left"}
-            onPrev={onPrevClick}
-            onNext={onNextClick}
-            progress={(currentDirection?.id!! * 100) / directions.length}
-          />
+          <div className={styles.sliderContainer}>
+            <Slider
+              buttonPosition={"left"}
+              onPrev={onPrevClick}
+              onNext={onNextClick}
+              progress={(currentDirection?.id!! * 100) / directions.length}
+            />
+          </div>
         </div>
       </div>
     </section>

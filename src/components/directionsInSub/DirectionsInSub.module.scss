@@ -149,7 +149,6 @@
   width: 407px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 
   @include respond(tablet) {
     width: 338px;
@@ -183,6 +182,10 @@
     width: 24px;
     height: 24px;
   }
+
+  @include respond(desktop) {
+    margin-top: 40px;
+  }
 }
 
 .duration {
@@ -191,6 +194,10 @@
   display: flex;
   gap: 22px;
   margin-top: 16px;
+
+  @include respond(tablet) {
+    margin-top: 20px;
+  }
 
   @include respond(mobile) {
     font-size: 13px;
@@ -205,6 +212,9 @@
 .description {
   font-size: 16px;
   line-height: 20.8px;
+  @include respond(desktop) {
+    margin-top: 48px;
+  }
 
   @include respond(tablet) {
     font-size: 14px;
@@ -212,4 +222,8 @@
   @include respond(mobile) {
     font-size: 13px;
   }
+}
+
+.sliderContainer {
+  margin-top: auto;
 }
