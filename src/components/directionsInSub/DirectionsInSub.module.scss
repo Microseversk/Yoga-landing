@@ -13,21 +13,23 @@
   @include respond(mobile) {
     margin-top: 88px;
   }
+  @include respond(desktop) {
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -3;
+      left: 65px;
+      bottom: -55px;
 
-  &::before {
-    content: "";
-    position: absolute;
-    z-index: -3;
-    left: 65px;
-    bottom: -55px;
-    width: 429px;
-    height: 280px;
+      width: 429px;
+      height: 280px;
 
-    background-image: url("/assets/flower2.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
+      background-image: url("/assets/flower2.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
 
-    background-position: center;
+      background-position: center;
+    }
   }
 
   // & > * {
