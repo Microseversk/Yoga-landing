@@ -19,7 +19,7 @@
       position: absolute;
       z-index: -3;
       left: 50px;
-      bottom: -25px;
+      bottom: -35px;
 
       width: 429px;
       height: 280px;
@@ -27,7 +27,7 @@
       background-image: url("/assets/flower2.svg");
       background-repeat: no-repeat;
       background-size: cover;
-      transform: rotate(10deg) scale(1.1);
+      transform: scale(1.2);
 
       background-position: center;
     }
