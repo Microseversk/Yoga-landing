@@ -1,0 +1,53 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.topContent {
+  display: flex;
+  justify-content: space-between;
+
+  @include respond(mobile) {
+    flex-direction: column;
+    row-gap: 32px;
+  }
+}
+
+.h {
+  font-family: "NewYorkerC 400";
+  width: 692px;
+  color: $accent-color;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 57.6px;
+  letter-spacing: 0.7%;
+
+  @include respond(tablet) {
+    width: 428px;
+    font-size: 30px;
+    line-height: 36px;
+  }
+  @include respond(mobile) {
+    width: 307px;
+    font-size: 26px;
+    line-height: 31.2px;
+  }
+}
+
+.p {
+  font-size: 20px;
+  line-height: 26px;
+  width: 362px;
+  @include respond(desktop) {
+    margin-right: 45px;
+  }
+
+  @include respond(tablet) {
+    width: 245px;
+    font-size: 14px;
+    line-height: 18.2px;
+  }
+  @include respond(mobile) {
+    font-size: 16px;
+    line-height: 20.8px;
+    width: 273px;
+  }
+}

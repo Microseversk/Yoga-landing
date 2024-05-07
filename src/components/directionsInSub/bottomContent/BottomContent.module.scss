@@ -1,0 +1,225 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.bottomContent {
+  display: grid;
+  grid-template-areas: "btns img info";
+  margin-top: 72px;
+  grid-auto-flow: column;
+  justify-content: space-between;
+
+  @include respond(desktop) {
+    grid-template-columns: 319px 346px 407px;
+  }
+
+  @include respond(tablet) {
+    grid-template-areas:
+      "btns btns"
+      "img info";
+    margin-top: 56px;
+    grid-template-columns: 1fr;
+  }
+  @include respond(mobile) {
+    grid-template-areas:
+      "btns"
+      "img"
+      "info";
+
+    margin-top: 56px;
+  }
+}
+
+.btnsContainer {
+  grid-area: btns;
+  display: flex;
+  gap: 8px;
+  height: fit-content;
+  white-space: nowrap;
+  flex-wrap: wrap;
+
+  @include respond(tablet) {
+    justify-content: center;
+  }
+
+  @include respond(mobile) {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  scrollbar-width: 0px;
+}
+
+.imgContainer {
+  grid-area: img;
+  width: 346px;
+  height: 493px;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.3s;
+  border-radius: 173px 173px 192.5px 0px;
+  background-repeat: no-repeat;
+
+  @include respond(tablet) {
+    width: 312px;
+    height: 422px;
+    margin-top: 32px;
+  }
+  @include respond(mobile) {
+    width: 100%;
+    height: 258px;
+    margin-top: 24px;
+
+    border-radius: 129px 0px 0px 0px;
+  }
+}
+
+.infoContainer {
+  grid-area: info;
+  width: 407px;
+  display: grid;
+  grid-template-areas:
+    "title"
+    "schedule"
+    "duration"
+    "description"
+    "slider";
+
+  @include respond(tablet) {
+    grid-template-areas:
+      "schedule"
+      "duration"
+      "title"
+      "description"
+      "slider";
+    width: 338px;
+    margin-top: 32px;
+  }
+  @include respond(mobile) {
+    grid-template-areas:
+      "title title"
+      "schedule duration"
+      "description description"
+      "slider slider";
+    width: 100%;
+    margin-top: 34px;
+  }
+}
+
+.title {
+  grid-area: title;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 31.2px;
+
+  @include respond(tablet) {
+    font-size: 15px;
+    line-height: 19.5px;
+    margin-top: 45px;
+  }
+  @include respond(mobile) {
+    font-size: 15px;
+    line-height: 19.5px;
+  }
+}
+.schedule {
+  grid-area: schedule;
+  display: flex;
+  font-size: 16px;
+  line-height: 20.8px;
+  gap: 22px;
+
+  @include respond(desktop) {
+    margin-top: 40px;
+  }
+
+  @include respond(tablet) {
+    align-items: center;
+    gap: 7px;
+  }
+  @include respond(mobile) {
+    font-size: 13px;
+    line-height: 17.55px;
+    gap: 10px;
+    max-width: 122px;
+    margin-top: 16px;
+  }
+
+  & > img {
+    width: 24px;
+    height: 24px;
+
+    @include respond(tablet) {
+      width: 27px;
+      height: 27px;
+    }
+  }
+}
+
+.duration {
+  grid-area: duration;
+  display: flex;
+  font-size: 16px;
+  line-height: 20.8px;
+  gap: 22px;
+  margin-top: 16px;
+
+  @include respond(tablet) {
+    margin-top: 20px;
+    align-items: center;
+    gap: 7px;
+  }
+
+  @include respond(mobile) {
+    gap: 10px;
+    font-size: 13px;
+    line-height: 17.55px;
+    margin-top: 16px;
+    max-width: 131px;
+    justify-self: end;
+  }
+
+  & > img {
+    width: 24px;
+    height: 24px;
+
+    @include respond(tablet) {
+      width: 27px;
+      height: 27px;
+    }
+  }
+}
+
+.description {
+  grid-area: description;
+  font-size: 16px;
+  min-height: 176px;
+  line-height: 20.8px;
+  @include respond(desktop) {
+    margin-top: 48px;
+  }
+
+  @include respond(tablet) {
+    font-size: 14px;
+    margin-top: 28px;
+  }
+  @include respond(mobile) {
+    font-size: 13px;
+    line-height: 17.55px;
+    margin-top: 24px;
+  }
+}
+
+.sliderContainer {
+  grid-area: slider;
+  align-self: flex-end;
+  @include respond(tablet) {
+    margin-top: 55px;
+  }
+
+  @include respond(mobile) {
+    margin-top: 12px;
+  }
+}
