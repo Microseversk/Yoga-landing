@@ -54,9 +54,22 @@ const DirectionsInSub = () => {
           }}
         ></div>
         <div className={styles.infoContainer}>
-          {currentDirection?.title}
-          {currentDirection?.duration}
-          {currentDirection?.description}
+          <h3 className={styles.title}>{currentDirection?.title}</h3>
+          <div>
+            <p className={styles.schedule}>
+              Проходит по: {currentDirection?.schedule.join(", ")}
+            </p>
+            <p className={styles.duration}>
+              Длительность: {currentDirection?.duration} мин
+            </p>
+          </div>
+          <p
+            className={styles.description}
+            dangerouslySetInnerHTML={{
+              __html:
+                currentDirection?.description.replace("\n", "<br><br>") || "",
+            }}
+          ></p>
           <Slider
             buttonPosition={"left"}
             onPrev={() => {
