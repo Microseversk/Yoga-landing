@@ -21,6 +21,33 @@ const DirectionsInSub = () => {
     return <div>Loading...</div>;
   }
 
+  const onPrevClick = () => {
+    setCurrentDirection(
+      directions[
+        (currentDirection?.id!! - 2 + directions.length) % directions.length
+      ]
+    );
+    btnsContainer.current?.scrollTo({
+      left:
+        currentDirection?.id!! == 1
+          ? btnsContainer?.current!!.scrollLeft + 1000000
+          : btnsContainer?.current!!.scrollLeft - 100,
+      behavior: "smooth",
+    });
+  };
+
+  const onNextClick = () => {
+    setCurrentDirection(directions[currentDirection?.id!! % directions.length]);
+    console.log(currentDirection?.id!! == directions.length);
+    btnsContainer.current?.scrollTo({
+      left:
+        currentDirection?.id!! == directions.length
+          ? btnsContainer?.current!!.scrollLeft - 1000000
+          : btnsContainer?.current!!.scrollLeft + 100,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section className={styles.container}>
       <div className={styles.topContent}>
@@ -57,9 +84,11 @@ const DirectionsInSub = () => {
           <h3 className={styles.title}>{currentDirection?.title}</h3>
           <div>
             <p className={styles.schedule}>
-              Проходит по: {currentDirection?.schedule.join(", ")}
+              <img src="./assets/calendar.svg" alt="..." />
+              <p>Проходит по: {currentDirection?.schedule.join(", ")}</p>
             </p>
             <p className={styles.duration}>
+              <img src="./assets/timer.svg" alt="..." />
               Длительность: {currentDirection?.duration} мин
             </p>
           </div>
@@ -72,34 +101,8 @@ const DirectionsInSub = () => {
           ></p>
           <Slider
             buttonPosition={"left"}
-            onPrev={() => {
-              setCurrentDirection(
-                directions[
-                  (currentDirection?.id!! - 2 + directions.length) %
-                    directions.length
-                ]
-              );
-              btnsContainer.current?.scrollTo({
-                left:
-                  currentDirection?.id!! == 1
-                    ? btnsContainer?.current!!.scrollLeft + 1000000
-                    : btnsContainer?.current!!.scrollLeft - 100,
-                behavior: "smooth",
-              });
-            }}
-            onNext={() => {
-              setCurrentDirection(
-                directions[currentDirection?.id!! % directions.length]
-              );
-              console.log(currentDirection?.id!! == directions.length);
-              btnsContainer.current?.scrollTo({
-                left:
-                  currentDirection?.id!! == directions.length
-                    ? btnsContainer?.current!!.scrollLeft - 1000000
-                    : btnsContainer?.current!!.scrollLeft + 100,
-                behavior: "smooth",
-              });
-            }}
+            onPrev={onPrevClick}
+            onNext={onNextClick}
             progress={(currentDirection?.id!! * 100) / directions.length}
           />
         </div>

@@ -13,9 +13,9 @@
     margin-top: 88px;
   }
 
-  & > * {
-    border: 1px solid black;
-  }
+  // & > * {
+  //   border: 1px solid black;
+  // }
 }
 
 .h {
@@ -43,6 +43,10 @@
   font-size: 20px;
   line-height: 26px;
   width: 362px;
+  @include respond(desktop) {
+    margin-right: 45px;
+  }
+
   @include respond(tablet) {
     width: 245px;
     font-size: 14px;
@@ -69,8 +73,8 @@
   display: grid;
   grid-template-areas: "btns img info";
   margin-top: 72px;
-  justify-content: space-between;
   grid-auto-flow: column;
+  justify-content: space-between;
 
   @include respond(desktop) {
     grid-template-columns: 319px 346px 407px;
@@ -172,14 +176,29 @@
 .schedule {
   font-size: 16px;
   line-height: 20.8px;
+  display: flex;
+  gap: 22px;
+
+  & > img {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .duration {
   font-size: 16px;
   line-height: 20.8px;
+  display: flex;
+  gap: 22px;
+  margin-top: 16px;
 
   @include respond(mobile) {
     font-size: 13px;
+  }
+
+  & > img {
+    width: 24px;
+    height: 24px;
   }
 }
 
