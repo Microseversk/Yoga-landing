@@ -3,6 +3,7 @@
 @import "../../styles/variables.scss";
 
 .container {
+  position: relative;
   display: grid;
   margin-top: 120px;
 
@@ -11,6 +12,22 @@
   }
   @include respond(mobile) {
     margin-top: 88px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -3;
+    left: 65px;
+    bottom: -55px;
+    width: 429px;
+    height: 280px;
+
+    background-image: url("/assets/flower2.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    background-position: center;
   }
 
   // & > * {
