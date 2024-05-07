@@ -18,8 +18,8 @@
       content: "";
       position: absolute;
       z-index: -3;
-      left: 65px;
-      bottom: -55px;
+      left: 50px;
+      bottom: -25px;
 
       width: 429px;
       height: 280px;
@@ -27,6 +27,7 @@
       background-image: url("/assets/flower2.svg");
       background-repeat: no-repeat;
       background-size: cover;
+      transform: rotate(10deg) scale(1.1);
 
       background-position: center;
     }
