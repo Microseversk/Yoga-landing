@@ -16,6 +16,11 @@
   color: $bg-color;
   cursor: pointer;
 
+  @include respond(tablet) {
+    left: -20px;
+    top: 30px;
+  }
+
   @include respond(mobile) {
     position: absolute;
 
