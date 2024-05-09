@@ -103,38 +103,34 @@
   grid-area: cost;
   display: grid;
   margin-top: 72px;
-  grid-template-areas: "left right";
-  grid-template-columns: auto 835px;
+  & > * {
+    border: 1px solid black;
+  }
+  grid-template-areas:
+    "costBase cost1 cost2"
+    "btn cost3 cost4";
+  @include respond(desktop) {
+  }
 
+  @include respond(tablet) {
+    grid-template-areas:
+      "costBase cost1"
+      "cost2 cost3"
+      "cost4 btn";
+  }
   @include respond(mobile) {
     margin-top: 56px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 33px;
-  }
-}
-
-.leftContent {
-  grid-area: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.rightContent {
-  grid-area: right;
-  justify-self: end;
-  column-gap: 82px;
-  row-gap: 48px;
-  display: flex;
-  flex-wrap: wrap;
-  @include respond(mobile) {
-    flex-direction: column;
-    row-gap: 40px;
+    grid-template-areas:
+      "costBase btn"
+      "cost1 cost1"
+      "cost2 cost2"
+      "cost3 cost3"
+      "cost4 cost4";
   }
 }
 
 .btn {
+  grid-area: btn;
   background-color: $accent-color;
   color: $bg-color;
   padding-inline: 67px;
@@ -144,4 +140,32 @@
   width: 240px;
   font-size: 15px;
   letter-spacing: 5%;
+
+  @include respond(tablet) {
+    width: 240px;
+    height: 58px;
+    background-color: inherit;
+    color: $accent-color;
+    border-color: $accent-color;
+  }
+}
+
+.costBase {
+  grid-area: costBase;
+}
+
+.cost1 {
+  grid-area: cost1;
+}
+
+.cost2 {
+  grid-area: cost2;
+}
+
+.cost3 {
+  grid-area: cost3;
+}
+
+.cost4 {
+  grid-area: cost4;
 }

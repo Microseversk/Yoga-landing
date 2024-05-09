@@ -4,15 +4,17 @@ interface ICostProps {
   monthTrainings?: number;
   monthTrainingsPrice: number;
   timeCost?: number;
+  className?: string;
 }
 
 const Cost = ({
   monthTrainings,
   monthTrainingsPrice,
   timeCost,
+  className,
 }: ICostProps) => {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${className}`}>
       <div className={styles.monthCost}>
         <div className={styles.leftTopContent}>
           {monthTrainings ? (

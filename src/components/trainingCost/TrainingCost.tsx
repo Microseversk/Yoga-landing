@@ -14,15 +14,27 @@ const TrainingCost = () => {
         <p>Первая тренировка для новых клиентов бесплатная</p>
       </div>
       <div className={styles.costContainer}>
-        <div className={styles.leftContent}>
-          <RoundedButton className={styles.btn}>ЗАПИСАТЬСЯ</RoundedButton>
-        </div>
-        <div className={styles.rightContent}>
-          <Cost monthTrainingsPrice={1000} monthTrainings={3} timeCost={400} />
-          <Cost monthTrainingsPrice={2000} monthTrainings={8} timeCost={700} />
-          <Cost monthTrainingsPrice={3000} monthTrainings={2} timeCost={250} />
-          <Cost monthTrainingsPrice={4000} />
-        </div>
+        <RoundedButton className={styles.btn}>ЗАПИСАТЬСЯ</RoundedButton>
+        <div className={styles.costBase}>Cost base</div>
+        <Cost
+          monthTrainingsPrice={1000}
+          className={styles.cost1}
+          monthTrainings={3}
+          timeCost={400}
+        />
+        <Cost
+          monthTrainingsPrice={2000}
+          className={styles.cost2}
+          monthTrainings={8}
+          timeCost={700}
+        />
+        <Cost
+          monthTrainingsPrice={3000}
+          className={styles.cost3}
+          monthTrainings={2}
+          timeCost={250}
+        />
+        <Cost monthTrainingsPrice={4000} className={styles.cost4} />
       </div>
     </section>
   );
