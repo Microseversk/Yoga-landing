@@ -103,6 +103,7 @@
   grid-area: cost;
   display: grid;
   margin-top: 72px;
+  grid-template-columns: auto auto auto;
   & > * {
     border: 1px solid black;
   }
