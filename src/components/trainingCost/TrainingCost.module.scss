@@ -1,0 +1,147 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "h text"
+    "cost cost";
+  margin-top: 120px;
+
+  @include respond(desktop) {
+    grid-template-columns: 530px 1fr;
+  }
+
+  @include respond(tablet) {
+    grid-template-columns: 336px 1fr;
+    margin-top: 100px;
+  }
+  @include respond(mobile) {
+    margin-top: 88px;
+    grid-template-areas:
+      "h"
+      "text"
+      "cost";
+  }
+}
+
+.h {
+  grid-area: h;
+  font-family: "NewYorkerC 400";
+  color: $accent-color;
+  width: 530px;
+  font-size: 48px;
+  letter-spacing: 1%;
+  line-height: 62.4px;
+  font-weight: 400;
+
+  @include respond(tablet) {
+    width: 336px;
+    font-size: 30px;
+    letter-spacing: 0.7%;
+    line-height: 36px;
+  }
+  @include respond(mobile) {
+    width: 327px;
+    font-size: 26px;
+    letter-spacing: 0.7%;
+    line-height: 31.2px;
+  }
+}
+
+.textContent {
+  font-size: 14px;
+  line-height: 17.5px;
+  width: 383px;
+  grid-area: text;
+  display: grid;
+  justify-self: start;
+
+  grid-template-areas:
+    "p1"
+    "p2";
+
+  @include respond(desktop) {
+    margin-left: 262px;
+    margin-right: 25px;
+  }
+  @include respond(tablet) {
+    margin-left: 21px;
+  }
+
+  @include respond(mobile) {
+    grid-template-areas:
+      "p2"
+      "p1";
+  }
+
+  & > :nth-child(1) {
+    grid-area: p1;
+    @include respond(tablet) {
+      width: 338px;
+    }
+    @include respond(mobile) {
+      margin-top: 8px;
+    }
+  }
+  & > :nth-child(2) {
+    grid-area: p2;
+    @include respond(desktop) {
+      margin-top: 9px;
+    }
+    @include respond(tablet) {
+      width: 261px;
+      margin-top: 16px;
+    }
+    @include respond(mobile) {
+      margin-top: 24px;
+    }
+  }
+}
+
+.costContainer {
+  grid-area: cost;
+  display: grid;
+  margin-top: 72px;
+  grid-template-areas: "left right";
+  grid-template-columns: auto 835px;
+
+  @include respond(mobile) {
+    margin-top: 56px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 33px;
+  }
+}
+
+.leftContent {
+  grid-area: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.rightContent {
+  grid-area: right;
+  justify-self: end;
+  column-gap: 82px;
+  row-gap: 48px;
+  display: flex;
+  flex-wrap: wrap;
+  @include respond(mobile) {
+    flex-direction: column;
+    row-gap: 40px;
+  }
+}
+
+.btn {
+  background-color: $accent-color;
+  color: $bg-color;
+  padding-inline: 67px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  height: 58px;
+  width: 240px;
+  font-size: 15px;
+  letter-spacing: 5%;
+}

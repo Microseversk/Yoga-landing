@@ -23,10 +23,12 @@
 .sliderContainer {
   display: flex;
   justify-items: center;
+  width: 488px;
   align-items: center;
   gap: 10px;
   @include respond(tablet) {
     gap: 5px;
+    width: 100%;
   }
   @include respond(mobile) {
     display: none;

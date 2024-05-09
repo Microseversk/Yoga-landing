@@ -15,8 +15,8 @@ const RoundedButton = (props: RoundedButtonProps) => {
       onClick={props.onClick}
       className={
         props.selected
-          ? `${styles.roundedButton} ${styles.selected}`
-          : styles.roundedButton
+          ? `${styles.roundedButton} ${styles.selected} ${props.className}`
+          : `${styles.roundedButton} ${props.className}`
       }
     >
       {props.children}
