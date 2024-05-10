@@ -4,6 +4,7 @@
 %button {
   transition: all $transition;
   border: 1px solid $accent-color;
+  user-select: none;
 }
 
 .buttom {

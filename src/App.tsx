@@ -1,17 +1,22 @@
+import DirectionsInSub from "./components/directionsInSub/DirectionsInSub";
+import Home from "./components/mainSection/Mainsection";
+import Navbar from "./components/navbar/Navbar";
+import Schedule from "./components/schedule/Schedule";
 import Button from "./components/shared/button/Button";
 import Typography from "./components/shared/typography/Typography";
+import TrainingCost from "./components/trainingCost/TrainingCost";
 import "./index.scss";
 
 function App() {
   return (
     <main className="wrapper">
-      {/* <Navbar />
+      <Navbar />
 
       <Home />
       <DirectionsInSub />
       <TrainingCost />
-      <Schedule /> */}
-      <div style={{ display: "flex", flexDirection: "column" }}>
+      <Schedule />
+      <div style={{ display: "none", flexDirection: "column" }}>
         <Typography variant="h1">Hello World</Typography>
         <Typography variant="h2">Hello World</Typography>
         <Typography variant="h3">Hello World</Typography>

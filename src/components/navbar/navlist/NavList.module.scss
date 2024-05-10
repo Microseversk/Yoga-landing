@@ -33,12 +33,12 @@
 
 .hide {
   display: flex;
-  animation: hide 0.7s forwards;
+  animation: hide $transition forwards;
 }
 
 .active {
   display: flex;
-  animation: open 0.7s forwards;
+  animation: open $transition forwards;
 }
 
 @keyframes open {

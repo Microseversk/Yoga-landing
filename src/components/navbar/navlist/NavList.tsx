@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import Typography from "../../shared/typography/Typography";
 import { NavbarContext } from "../Navbar";
 import styles from "./NavList.module.scss";
 
@@ -10,28 +11,28 @@ const NavList = () => {
       <li>
         <a href="#dirs" onClick={() => toggleOpen("hide")}>
           {" "}
-          ПРОГРАММЫ
+          <Typography variant="menu">ПРОГРАММЫ</Typography>
         </a>
       </li>
       <li>
         <a href="#cost" onClick={() => toggleOpen("hide")}>
           {" "}
-          ПРАЙС
+          <Typography variant="menu">ПРАЙС</Typography>
         </a>
       </li>
       <li>
         <a href="#" onClick={() => toggleOpen("hide")}>
-          РАСПИСАНИЕ
+          <Typography variant="menu">РАСПИСАНИЕ</Typography>
         </a>
       </li>
       <li>
         <a href="#" onClick={() => toggleOpen("hide")}>
-          ОТЗЫВЫ
+          <Typography variant="menu">ОТЗЫВЫ</Typography>
         </a>
       </li>
       <li>
         <a href="#" onClick={() => toggleOpen("hide")}>
-          КОНТАКТЫ
+          <Typography variant="menu">КОНТАКТЫ</Typography>
         </a>
       </li>
     </ul>

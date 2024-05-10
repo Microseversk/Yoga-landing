@@ -53,9 +53,7 @@
 }
 
 .h1 {
-  font-family: "NewYorkerC 400";
-  font-size: 84px;
-  font-weight: 400;
+  grid-area: h1;
   max-width: 579px;
   color: $accent-color;
 
@@ -63,41 +61,13 @@
     font-size: 54px;
   }
   @include respond(mobile) {
-    font-size: 48px;
     text-align: center;
   }
 }
 
 .p {
-  display: block;
-  width: 276px;
-  font-size: 16px;
-  line-height: 20.8px;
-  @include respond(mobile) {
-    width: 296px;
-    text-align: center;
-  }
-}
-
-.btnContainer {
-  grid-area: btn;
-  justify-self: end;
-  position: relative;
-  margin-right: 10%;
-  margin-top: 20px;
-
-  @include respond(tablet) {
-    margin-right: 10%;
-    margin-top: 6%;
-  }
-
-  @include respond(mobile) {
-    margin-right: 15px;
-  }
-}
-
-.pContainer {
   grid-area: p;
+  max-width: 276px;
   margin-top: 56px;
 
   @include respond(tablet) {
@@ -107,6 +77,30 @@
   @include respond(mobile) {
     margin-top: 32px;
     justify-self: center;
+    max-width: 296px;
+    text-align: center;
+  }
+}
+
+.btnContainer {
+  grid-area: btn;
+  position: relative;
+
+  @include respond(desktop) {
+    margin-left: 55%;
+    top: 20%;
+  }
+
+  @include respond(tablet) {
+    margin-left: 55%;
+    margin-top: 5%;
+    top: 25%;
+  }
+
+  @include respond(mobile) {
+    grid-area: img;
+    margin-top: 15%;
+    margin-left: auto;
   }
 }
 
@@ -122,5 +116,10 @@
   grid-area: img;
   align-self: end;
   @include respond(desktop) {
+  }
+
+  @include respond(mobile) {
+    grid-area: img;
+    margin-top: 64px;
   }
 }

@@ -8,9 +8,9 @@ interface ITypographyProps {
 
 const Typography = (props: ITypographyProps) => {
   return (
-    <span className={`${styles[`${props.variant}`]} ${props.className}`}>
+    <div className={`${styles[`${props.variant}`]} ${props.className}`}>
       {props.children}
-    </span>
+    </div>
   );
 };
 
