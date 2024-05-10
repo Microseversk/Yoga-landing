@@ -28,8 +28,8 @@
     background-size: cover;
 
     @include respond(tablet) {
-      right: -60px;
-      top: -120px;
+      right: -90px;
+      top: -130px;
       transform: scale(0.85);
     }
     @include respond(mobile) {

@@ -3,25 +3,36 @@ import { NavbarContext } from "../Navbar";
 import styles from "./NavList.module.scss";
 
 const NavList = () => {
-  const { status } = useContext(NavbarContext);
-  console.log("@" + status);
+  const { toggleOpen, status } = useContext(NavbarContext);
 
   return (
     <ul className={`${styles.list}  ${styles[status]}`}>
       <li>
-        <a href="#"> ПРОГРАММЫ</a>
+        <a href="#dirs" onClick={() => toggleOpen("hide")}>
+          {" "}
+          ПРОГРАММЫ
+        </a>
       </li>
       <li>
-        <a href="#"> ПРАЙС</a>
+        <a href="#cost" onClick={() => toggleOpen("hide")}>
+          {" "}
+          ПРАЙС
+        </a>
       </li>
       <li>
-        <a href="#">РАСПИСАНИЕ</a>
+        <a href="#" onClick={() => toggleOpen("hide")}>
+          РАСПИСАНИЕ
+        </a>
       </li>
       <li>
-        <a href="#">ОТЗЫВЫ</a>
+        <a href="#" onClick={() => toggleOpen("hide")}>
+          ОТЗЫВЫ
+        </a>
       </li>
       <li>
-        <a href="#">КОНТАКТЫ</a>
+        <a href="#" onClick={() => toggleOpen("hide")}>
+          КОНТАКТЫ
+        </a>
       </li>
     </ul>
   );

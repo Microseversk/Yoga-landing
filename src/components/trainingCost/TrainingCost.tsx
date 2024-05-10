@@ -3,7 +3,7 @@ import Cost from "./cost/Cost";
 import styles from "./TrainingCost.module.scss";
 const TrainingCost = () => {
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="cost">
       <h2 className={styles.h}>СТОИМОСТЬ НАШИХ ТРЕНИРОВОК</h2>
       <div className={styles.textContent}>
         <p>
