@@ -17,7 +17,6 @@
       "btns btns"
       "img info";
     margin-top: 56px;
-    grid-template-columns: 1fr;
   }
   @include respond(mobile) {
     grid-template-areas:

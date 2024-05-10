@@ -1,6 +1,10 @@
 @import "../../../styles/mixins.scss";
 @import "../../../styles/variables.scss";
 
+div {
+  font-family: "Raleway 400";
+}
+
 .h1 {
   font-family: "NewYorkerC 400";
   font-size: 84px;
@@ -95,6 +99,9 @@
   font-family: "Raleway 400";
   font-size: 15px;
 
+  @include respond(tablet) {
+    font-size: 12px;
+  }
   @include respond(mobile) {
     font-size: 15px;
   }

@@ -87,7 +87,7 @@
   position: relative;
 
   @include respond(desktop) {
-    margin-left: 55%;
+    margin-left: 60%;
     top: 20%;
   }
 
@@ -114,8 +114,9 @@
 
 .imgContainer {
   grid-area: img;
-  align-self: end;
+  align-self: self-end;
   @include respond(desktop) {
+    margin-left: auto;
   }
 
   @include respond(mobile) {
