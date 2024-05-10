@@ -83,7 +83,7 @@
   grid-area: btn;
   justify-self: end;
   position: relative;
-  margin-right: 20%;
+  margin-right: 10%;
   margin-top: 20px;
 
   @include respond(tablet) {
@@ -120,5 +120,7 @@
 
 .imgContainer {
   grid-area: img;
-  align-self: flex-end;
+  @include respond(desktop) {
+    justify-self: end;
+  }
 }
