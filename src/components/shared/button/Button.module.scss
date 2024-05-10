@@ -1,0 +1,131 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/variables.scss";
+
+%button {
+  transition: all $transition;
+  border: 1px solid $accent-color;
+}
+
+.buttom {
+  @extend %button;
+  position: relative;
+  width: 155px;
+  height: 155px;
+  border-radius: 50%;
+  border: none;
+  background-color: $accent-color;
+  color: $bg-color;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    z-index: -10;
+    background-image: url("/assets/flower-button.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all $transition;
+  }
+
+  &:hover::before {
+    width: 347px;
+    height: 300px;
+
+    @include respond(tablet) {
+      width: 234px;
+      height: 230px;
+    }
+  }
+
+  @include respond(tablet) {
+    width: 111px;
+    height: 111px;
+  }
+
+  @include respond(mobile) {
+    &::before {
+      display: none;
+    }
+    width: 111px;
+    height: 111px;
+  }
+}
+
+.dirs {
+  @extend %button;
+  width: fit-content;
+  padding: 16px 32px 16px 32px;
+  color: $text-color;
+  background-color: $bg-color;
+  border: 1px solid #d2cfc7;
+  border-radius: 30px;
+
+  &:hover {
+    border-color: $accent-color;
+  }
+
+  &:active {
+    color: $bg-color;
+    background-color: $accent-color;
+    border-color: $accent-color;
+  }
+
+  @include respond(tablet) {
+    padding: 16px 20px 16px 20px;
+  }
+
+  @include respond(mobile) {
+    padding: 15px 20px 15px 20px;
+  }
+}
+
+.feedback {
+  @extend %button;
+  width: 240px;
+  height: 55px;
+  padding: 24px, 56px, 24px, 56px;
+  border-radius: 52.99px;
+  background-color: $accent-color;
+  color: $bg-color;
+
+  &:hover {
+    background-color: $bg-color;
+    color: $accent-color;
+    border-color: $accent-color;
+  }
+
+  @include respond(tablet) {
+    padding: 24px 56px 24px 56px;
+  }
+
+  @include respond(mobile) {
+    padding: 20px 40px 20px 40px;
+  }
+}
+
+%slider {
+  @extend %button;
+  background-color: $bg-color;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid $accent-color;
+  color: 1px solid $accent-color;
+
+  &:hover {
+    background-color: $accent-color;
+    color: $bg-color;
+  }
+}
+
+.sliderLeft {
+  @extend %slider;
+}
+
+.sliderRight {
+  @extend %slider;
+}
