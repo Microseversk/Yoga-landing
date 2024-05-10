@@ -2,61 +2,90 @@
 @import "../../styles/mixins.scss";
 
 .container {
+  display: grid;
+
   @include respond(desktop) {
     margin-top: 120px;
+    align-items: end;
+    justify-content: space-between;
+    grid-template-areas:
+      "h p"
+      "schedule img";
   }
   @include respond(tablet) {
     margin-top: 108px;
+    grid-template-areas:
+      "h p"
+      "schedule schedule";
   }
   @include respond(mobile) {
     margin-top: 88px;
+    grid-template-areas:
+      "h"
+      "p"
+      "schedule";
   }
 }
 
 .h {
+  grid-area: h;
   font-family: "NewYorkerC 400";
   color: $accent-color;
-  width: 530px;
-  font-size: 48px;
-  letter-spacing: 1%;
-  line-height: 62.4px;
-  font-weight: 400;
+  max-width: 657px;
 
   @include respond(tablet) {
-    width: 341px;
-    font-size: 30px;
-    letter-spacing: 0.7%;
-    line-height: 36px;
+    max-width: 341px;
   }
   @include respond(mobile) {
-    width: 326px;
-    font-size: 26px;
-    letter-spacing: 0.7%;
-    line-height: 31.2px;
+    max-width: 326px;
   }
 }
 
-.textContent {
-  font-size: 14px;
-  line-height: 17.5px;
-  grid-area: text;
-  display: grid;
-  justify-self: start;
+.p {
+  grid-area: p;
+  max-width: 404px;
+  justify-self: end;
+
+  @include respond(tablet) {
+    max-width: 337px;
+  }
+  @include respond(mobile) {
+    margin-top: 24px;
+    max-width: 100%;
+    justify-self: start;
+  }
+}
+
+.schedule {
+  grid-area: schedule;
+  max-width: 712px;
+  margin-top: 72px;
+
+  @include respond(tablet) {
+    max-width: 100%;
+    margin-top: 56px;
+  }
+  @include respond(mobile) {
+    margin-top: 64px;
+  }
+}
+
+.img {
+  grid-area: img;
+  margin-top: 72px;
 
   @include respond(desktop) {
-    margin-left: 262px;
-    margin-right: 25px;
-  }
-  @include respond(tablet) {
-    margin-left: 21px;
+    width: 407px;
+    height: 478px;
+    background-image: url("/assets/schedule.png");
+    background-repeat: no-repeat;
+    background-size: auto;
   }
 
-  & > :nth-child(1) {
-    @include respond(tablet) {
-      width: 338px;
-    }
-    @include respond(mobile) {
-      margin-top: 8px;
-    }
+  @include respond(tablet) {
+    margin-top: 56px;
+  }
+  @include respond(mobile) {
+    margin-top: 64px;
   }
 }

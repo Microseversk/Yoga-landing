@@ -1,0 +1,84 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/variables.scss";
+
+.container {
+  margin-top: 61px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 21px;
+
+  @include respond(tablet) {
+    row-gap: 19px;
+  }
+  @include respond(mobile) {
+    row-gap: 16px;
+  }
+}
+
+.daysContainer {
+  display: flex;
+  width: 90%;
+  gap: 30px;
+  @include respond(mobile) {
+    width: 344px;
+    overflow: auto;
+    gap: 20px;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    border-bottom: 1px solid #cbc9c1;
+  }
+}
+
+.day {
+  font-size: 14px;
+  color: $text-color;
+  position: relative;
+  opacity: 0.5;
+  cursor: pointer;
+  user-select: none;
+
+  &:not(.active):hover {
+    color: $accent-color;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      height: 2px;
+      bottom: -22px;
+      transform: translateX(-50%);
+      width: 0;
+
+      background-color: $accent-color;
+      animation: hover 0.7s forwards;
+    }
+  }
+}
+
+@keyframes hover {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.active {
+  color: $accent-color;
+  transition: all $transition;
+  position: relative;
+  &::after {
+    transition: all $transition;
+    position: absolute;
+    content: "";
+    height: 2px;
+    bottom: -22px;
+    left: 0;
+
+    width: 100%;
+    background-color: $accent-color;
+  }
+}

@@ -1,0 +1,56 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/variables.scss";
+
+.container {
+  display: grid;
+  grid-template-areas: "title time duration coach icons";
+  border-bottom: 1px solid #cbc8c1;
+  padding-bottom: 21px;
+  align-items: center;
+
+  @include respond(mobile) {
+    padding-bottom: 16px;
+    grid-template-areas:
+      "title time duration icons"
+      "coach time duration icons";
+  }
+}
+
+.iconsContainer {
+  grid-area: icons;
+  display: flex;
+  gap: 24px;
+
+  @include respond(tablet) {
+    gap: 24px;
+  }
+  @include respond(mobile) {
+    gap: 16px;
+  }
+}
+
+.title {
+  grid-area: title;
+  width: 107px;
+}
+
+.time {
+  grid-area: time;
+}
+
+.duration {
+  grid-area: duration;
+  @include respond(mobile) {
+    font-size: 11px;
+    color: #98958b;
+  }
+}
+
+.coach {
+  grid-area: coach;
+
+  @include respond(mobile) {
+    font-size: 11px;
+    color: #98958b;
+  }
+}
