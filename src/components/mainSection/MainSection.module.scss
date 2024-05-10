@@ -120,7 +120,7 @@
 
 .imgContainer {
   grid-area: img;
+  align-self: end;
   @include respond(desktop) {
-    justify-self: end;
   }
 }

@@ -1,0 +1,62 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.container {
+  @include respond(desktop) {
+    margin-top: 120px;
+  }
+  @include respond(tablet) {
+    margin-top: 108px;
+  }
+  @include respond(mobile) {
+    margin-top: 88px;
+  }
+}
+
+.h {
+  font-family: "NewYorkerC 400";
+  color: $accent-color;
+  width: 530px;
+  font-size: 48px;
+  letter-spacing: 1%;
+  line-height: 62.4px;
+  font-weight: 400;
+
+  @include respond(tablet) {
+    width: 341px;
+    font-size: 30px;
+    letter-spacing: 0.7%;
+    line-height: 36px;
+  }
+  @include respond(mobile) {
+    width: 326px;
+    font-size: 26px;
+    letter-spacing: 0.7%;
+    line-height: 31.2px;
+  }
+}
+
+.textContent {
+  font-size: 14px;
+  line-height: 17.5px;
+  grid-area: text;
+  display: grid;
+  justify-self: start;
+
+  @include respond(desktop) {
+    margin-left: 262px;
+    margin-right: 25px;
+  }
+  @include respond(tablet) {
+    margin-left: 21px;
+  }
+
+  & > :nth-child(1) {
+    @include respond(tablet) {
+      width: 338px;
+    }
+    @include respond(mobile) {
+      margin-top: 8px;
+    }
+  }
+}
