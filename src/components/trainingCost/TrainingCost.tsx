@@ -1,5 +1,5 @@
 import RoundedButton from "../shared/roundedButton/RoundedButton";
-import Cost from "./Cost/Cost";
+import Cost from "./cost/Cost";
 import styles from "./TrainingCost.module.scss";
 const TrainingCost = () => {
   return (

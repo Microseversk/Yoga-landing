@@ -31,10 +31,45 @@ a:visited {
   color: inherit;
 }
 
+body {
+  position: relative;
+  @include respond(desktop) {
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -30;
+      top: 2140.24px;
+      left: -20px;
+      width: 358px;
+      height: 451px;
+      background-image: url("/assets/flower3.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -30;
+      top: 2040.24px;
+      right: 0;
+      width: 477.19px;
+      height: 398.92px;
+      background-image: url("/assets/flower4.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+  @include respond(tablet) {
+  }
+  @include respond(mobile) {
+  }
+}
+
 .wrapper {
   margin: 0 auto;
   margin-top: 19px;
-  border: 1px solid red;
+  //border: 1px solid red;
 
   @include respond(mobile) {
     max-width: 345px;

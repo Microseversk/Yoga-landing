@@ -3,6 +3,7 @@
 
 .container {
   display: grid;
+  position: relative;
   grid-template-areas:
     "h text"
     "cost cost";
