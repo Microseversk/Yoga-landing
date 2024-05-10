@@ -2,17 +2,31 @@ import styles from "./Cost.module.scss";
 
 interface ICostProps {
   monthTrainings?: number;
-  monthTrainingsPrice: number;
+  monthTrainingsPrice?: number;
   timeCost?: number;
   className?: string;
+  base?: number;
 }
 
 const Cost = ({
   monthTrainings,
   monthTrainingsPrice,
   timeCost,
+  base,
   className,
 }: ICostProps) => {
+  if (base) {
+    return (
+      <div className={`${styles.containerBase} ${className}`}>
+        <div className={styles.baseTop}>{base}₽</div>
+        <div className={styles.dividerBase}></div>
+        <div className={styles.baseBottom}>
+          <div>1</div>
+          <div>занятие</div>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className={`${styles.container} ${className}`}>
       <div className={styles.monthCost}>
@@ -24,7 +38,7 @@ const Cost = ({
             </>
           ) : (
             <>
-              <span></span>
+              <span style={{ display: "none" }}></span>
               <span style={{ width: "78px" }}>безлимит на месяц</span>
             </>
           )}

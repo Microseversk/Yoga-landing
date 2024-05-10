@@ -9,7 +9,7 @@
   margin-top: 120px;
 
   @include respond(desktop) {
-    grid-template-columns: 530px 1fr;
+    grid-template-columns: 530px auto;
   }
 
   @include respond(tablet) {
@@ -52,7 +52,6 @@
 .textContent {
   font-size: 14px;
   line-height: 17.5px;
-  width: 383px;
   grid-area: text;
   display: grid;
   justify-self: start;
@@ -103,17 +102,22 @@
   grid-area: cost;
   display: grid;
   margin-top: 72px;
-  grid-template-columns: auto auto auto;
+
   & > * {
-    border: 1px solid black;
+    //border: 1px solid black;
   }
-  grid-template-areas:
-    "costBase cost1 cost2"
-    "btn cost3 cost4";
+
   @include respond(desktop) {
+    row-gap: 48px;
+    grid-template-columns: 240px 346px 407px;
+    grid-template-areas:
+      "costBase cost1 cost2"
+      "btn cost3 cost4";
   }
 
   @include respond(tablet) {
+    column-gap: 20px;
+    row-gap: 32px;
     grid-template-areas:
       "costBase cost1"
       "cost2 cost3"
@@ -121,6 +125,7 @@
   }
   @include respond(mobile) {
     margin-top: 56px;
+    row-gap: 37px;
     grid-template-areas:
       "costBase btn"
       "cost1 cost1"
@@ -131,6 +136,7 @@
 }
 
 .btn {
+  margin-top: auto;
   grid-area: btn;
   background-color: $accent-color;
   color: $bg-color;
@@ -148,25 +154,49 @@
     background-color: inherit;
     color: $accent-color;
     border-color: $accent-color;
+    justify-self: end;
+  }
+
+  @include respond(mobile) {
+    width: 191px;
+    height: 49px;
+    font-size: 13px;
+    padding: 15px 40px 15px 40px;
+    justify-self: end;
   }
 }
 
 .costBase {
   grid-area: costBase;
+  @include respond(tablet) {
+    margin-bottom: 4px;
+  }
 }
 
 .cost1 {
   grid-area: cost1;
+  @include respond(desktop) {
+    margin-left: 126px;
+  }
 }
 
 .cost2 {
   grid-area: cost2;
+  @include respond(desktop) {
+    margin-left: 126px + 82px;
+  }
 }
 
 .cost3 {
   grid-area: cost3;
+  @include respond(desktop) {
+    margin-left: 126px;
+  }
 }
 
 .cost4 {
   grid-area: cost4;
+  @include respond(desktop) {
+    margin-left: 126px + 82px;
+  }
 }

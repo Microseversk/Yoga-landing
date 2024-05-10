@@ -15,7 +15,9 @@ const TrainingCost = () => {
       </div>
       <div className={styles.costContainer}>
         <RoundedButton className={styles.btn}>ЗАПИСАТЬСЯ</RoundedButton>
-        <div className={styles.costBase}>Cost base</div>
+        <div className={styles.costBase}>
+          <Cost base={800} />
+        </div>
         <Cost
           monthTrainingsPrice={1000}
           className={styles.cost1}

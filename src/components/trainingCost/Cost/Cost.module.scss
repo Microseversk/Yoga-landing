@@ -9,7 +9,7 @@
   }
 
   @include respond(mobile) {
-    width: 327px;
+    width: 100%;
   }
 }
 
@@ -92,4 +92,64 @@
   font-family: "Raleway 300";
   display: flex;
   align-items: end;
+}
+
+.containerBase {
+  width: 123px;
+
+  @include respond(tablet) {
+    width: 92px;
+  }
+
+  @include respond(mobile) {
+    width: 83px;
+  }
+}
+
+.baseTop {
+  font-size: 45px;
+  font-family: "Raleway 300";
+  letter-spacing: 0.7%;
+  line-height: 52.83px;
+
+  @include respond(tablet) {
+    font-size: 32px;
+    line-height: 37.57px;
+  }
+  @include respond(mobile) {
+    font-size: 32px;
+    line-height: 37.57px;
+  }
+}
+
+.dividerBase {
+  background-color: #98958b;
+  width: 115px;
+  height: 1px;
+  margin-top: 8px;
+
+  @include respond(tablet) {
+    width: 91px;
+  }
+  @include respond(mobile) {
+    width: 83px;
+  }
+}
+
+.baseBottom {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+
+  & > :nth-child(1) {
+    font-size: 36px;
+
+    @include respond(tablet) {
+      font-size: 32px;
+    }
+  }
+
+  & > :nth-child(2) {
+    font-size: 16px;
+  }
 }
