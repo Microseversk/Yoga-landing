@@ -137,21 +137,29 @@
 }
 
 .btn {
-  margin-top: auto;
   grid-area: btn;
+  margin-top: auto;
   background-color: $accent-color;
   color: $bg-color;
-  padding-inline: 67px;
-  padding-top: 22px;
-  padding-bottom: 22px;
-  height: 58px;
-  width: 240px;
-  font-size: 15px;
-  letter-spacing: 5%;
+  height: 55px;
+
+  @include respond(desktop) {
+    &:hover {
+      background-color: $bg-color;
+      color: $accent-color;
+      border-color: $accent-color;
+    }
+  }
+  @include respond(mobile) {
+    &:hover {
+      background-color: $bg-color;
+      color: $accent-color;
+      border-color: $accent-color;
+    }
+  }
 
   @include respond(tablet) {
     width: 240px;
-    height: 58px;
     background-color: inherit;
     color: $accent-color;
     border-color: $accent-color;
@@ -161,8 +169,6 @@
   @include respond(mobile) {
     width: 191px;
     height: 49px;
-    font-size: 13px;
-    padding: 15px 40px 15px 40px;
     justify-self: end;
   }
 }

@@ -49,6 +49,30 @@
       "image": "/assets/directionsInSub/stretch.webp"
     }
   ],
+  "cost": {
+    "base": 800,
+    "price": [
+      {
+        "monthTrainings": 4,
+        "monthTrainingsPrice": 3000,
+        "timeCost": 750
+      },
+      {
+        "monthTrainings": 8,
+        "monthTrainingsPrice": 5200,
+        "timeCost": 650
+      },
+      {
+        "monthTrainings": 12,
+        "monthTrainingsPrice": 6600,
+        "timeCost": 550
+      },
+      {
+        "monthTrainingsPrice": 8000
+      }
+    ]
+  },
+
   "schedule": [
     {
       "day": "Понедельник",

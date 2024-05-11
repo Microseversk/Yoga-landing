@@ -20,6 +20,14 @@
   grid-area: icons;
   display: flex;
   gap: 24px;
+  color: $bg-color;
+  & svg {
+    transition: all $transition;
+    cursor: pointer;
+  }
+  & svg:hover {
+    color: $accent-color;
+  }
 
   @include respond(tablet) {
     gap: 24px;

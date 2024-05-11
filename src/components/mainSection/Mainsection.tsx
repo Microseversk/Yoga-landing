@@ -15,7 +15,7 @@ const Home = () => {
         Здесь мы поможем вам держать тело в тонусе, а душу - в гармонии.
       </Typography>
       <Button variant="buttom" className={styles.btnContainer}>
-        <Typography variant="button">Записаться</Typography>
+        <Typography variant="button">ЗАПИСАТЬСЯ</Typography>
       </Button>
       <div className={styles.advContainer}>
         <Advantages />

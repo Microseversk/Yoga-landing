@@ -3,7 +3,7 @@ import styles from "./Schedule.module.scss";
 import ScheduleList from "./ScheduleList/ScheduleList";
 const Schedule = () => {
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="schedule">
       <Typography variant="h2" className={styles.h}>
         Найдите свою практику В нашем расписании
       </Typography>
