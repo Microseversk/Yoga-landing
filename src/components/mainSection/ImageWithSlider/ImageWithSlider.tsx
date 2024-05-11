@@ -23,7 +23,11 @@ const ImageWithSlider = () => {
       ></div>
 
       <div className={styles.sliderContainer}>
-        <span>{image + 1}/3</span>
+        <p>
+          {image + 1}
+          <span>/3</span>
+        </p>
+
         <Slider
           buttonPosition={"right"}
           onPrev={handlePrevClick}
