@@ -5,10 +5,11 @@ interface SliderProps {
   onPrev: () => void;
   onNext: () => void;
   progress: number;
+  className?: string;
 }
 const Slider = (props: SliderProps) => {
   return (
-    <div className={styles.sliderContainer}>
+    <div className={`${styles.sliderContainer} ${props.className}`}>
       {props.buttonPosition === "right" && (
         <div className={styles.slider}>
           <span

@@ -5,14 +5,13 @@
   margin-bottom: 400px;
   display: grid;
   & > * {
-    border: 1px solid black;
+    //border: 1px solid black;
   }
 
   margin-top: 120px;
   grid-template-areas:
     "h p"
-    "img description"
-    "slider slider";
+    "coachSlider coachSlider";
 
   @include respond(tablet) {
     margin-top: 115px;
@@ -25,8 +24,7 @@
     grid-template-areas:
       "h"
       "p"
-      "img"
-      "slider";
+      "coachSlider";
   }
 }
 
@@ -34,7 +32,11 @@
   grid-area: h;
   color: $accent-color;
   max-width: 588px;
-
+  @include respond(desktop) {
+    & br {
+      display: none;
+    }
+  }
   @include respond(tablet) {
     max-width: 259px;
   }
@@ -54,5 +56,6 @@
   @include respond(mobile) {
     max-width: 327px;
     justify-self: start;
+    margin-top: 24px;
   }
 }

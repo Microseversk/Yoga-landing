@@ -1,10 +1,8 @@
-import useCoaches from "../../hooks/useCoaches";
 import Typography from "../shared/typography/Typography";
 import styles from "./Coaches.module.scss";
+import CoachSlider from "./coachSlider/CoachSlider";
 
 const Coaches = () => {
-  const { coaches } = useCoaches();
-  console.log(coaches);
   return (
     <section className={styles.container}>
       <Typography variant="h2" className={styles.h}>
@@ -15,6 +13,7 @@ const Coaches = () => {
         и интересные занятия, которые помогут вам укрепить мышечный корсет,
         достичь гибкости, улучшить осанку и физическую форму.
       </Typography>
+      <CoachSlider />
     </section>
   );
 };
