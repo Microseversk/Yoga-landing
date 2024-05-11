@@ -10,7 +10,6 @@ export interface Schedule {
 const ScheduleList = () => {
   const { schedule } = useGetSchedule();
   const [day, setDay] = useState("Понедельник");
-  console.log(schedule);
   return (
     <>
       <div className={style.daysContainer}>

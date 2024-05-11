@@ -1,0 +1,58 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.container {
+  margin-bottom: 400px;
+  display: grid;
+  & > * {
+    border: 1px solid black;
+  }
+
+  margin-top: 120px;
+  grid-template-areas:
+    "h p"
+    "img description"
+    "slider slider";
+
+  @include respond(tablet) {
+    margin-top: 115px;
+  }
+  @include respond(mobile) {
+    & br {
+      display: none;
+    }
+    margin-top: 88px;
+    grid-template-areas:
+      "h"
+      "p"
+      "img"
+      "slider";
+  }
+}
+
+.h {
+  grid-area: h;
+  color: $accent-color;
+  max-width: 588px;
+
+  @include respond(tablet) {
+    max-width: 259px;
+  }
+  @include respond(mobile) {
+    max-width: 326px;
+  }
+}
+
+.p {
+  grid-area: p;
+  max-width: 407px;
+  justify-self: end;
+
+  @include respond(tablet) {
+    max-width: 338px;
+  }
+  @include respond(mobile) {
+    max-width: 327px;
+    justify-self: start;
+  }
+}

@@ -5,7 +5,8 @@ const TopContent = () => {
   return (
     <div className={styles.topContent}>
       <Typography variant="h2" className={styles.h}>
-        Все направления в одном абонементе
+        Все направления
+        <br /> в одном абонементе
       </Typography>
       <Typography variant="h4" className={styles.p}>
         Не определились с направлением? Мы подскажем!

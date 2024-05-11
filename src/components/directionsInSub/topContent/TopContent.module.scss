@@ -6,6 +6,11 @@
   column-gap: 30px;
   justify-content: space-between;
 
+  @include respond(desktop) {
+    & br {
+      display: none;
+    }
+  }
   @include respond(mobile) {
     flex-direction: column;
     row-gap: 32px;
