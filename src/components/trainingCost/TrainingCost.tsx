@@ -1,14 +1,14 @@
 import useCost from "../../hooks/useCost";
 import RoundedButton from "../shared/roundedButton/RoundedButton";
 import Typography from "../shared/typography/Typography";
-import Cost from "./cost/Cost";
+import Cost from "./Cost/Cost";
 import styles from "./TrainingCost.module.scss";
 const TrainingCost = () => {
   const { cost, isLoading } = useCost();
   console.log(cost?.price);
   if (isLoading) return <div>Loading...</div>;
   return (
-    <section className={styles.container} number="cost">
+    <section className={styles.container} id="cost">
       <h2 className={styles.h}>СТОИМОСТЬ НАШИХ ТРЕНИРОВОК</h2>
       <div className={styles.textContent}>
         <p>

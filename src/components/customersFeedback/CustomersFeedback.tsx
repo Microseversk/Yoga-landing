@@ -4,7 +4,7 @@ import styles from "./CustomersFeedback.module.scss";
 import FeedbackList from "./feedbackList/FeedbackList";
 const CustomersFeedback = () => {
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="feedback">
       <Typography variant="h2" className={styles.h}>
         Наши довольные клиенты
       </Typography>

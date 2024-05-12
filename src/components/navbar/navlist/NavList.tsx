@@ -26,7 +26,7 @@ const NavList = () => {
         </a>
       </li>
       <li>
-        <a href="#" onClick={() => toggleOpen("hide")}>
+        <a href="#feedback" onClick={() => toggleOpen("hide")}>
           <Typography variant="menu">ОТЗЫВЫ</Typography>
         </a>
       </li>
