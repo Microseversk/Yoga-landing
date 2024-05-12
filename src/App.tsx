@@ -1,4 +1,5 @@
 import Coaches from "./components/coaches/Coaches";
+import CustomersFeedback from "./components/customersFeedback/CustomersFeedback";
 import DirectionsInSub from "./components/directionsInSub/DirectionsInSub";
 import Home from "./components/mainSection/Mainsection";
 import Navbar from "./components/navbar/Navbar";
@@ -15,6 +16,7 @@ function App() {
       <TrainingCost />
       <Schedule />
       <Coaches />
+      <CustomersFeedback />
     </main>
   );
 }

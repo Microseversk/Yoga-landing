@@ -1,0 +1,23 @@
+.container {
+  display: grid;
+  grid-template-areas:
+    "f1 f2 f3"
+    "sl sl sl";
+}
+
+.f1 {
+  grid-area: f1;
+}
+
+.f2 {
+  grid-area: f2;
+}
+
+.f3 {
+  grid-area: f3;
+}
+
+.slider {
+  grid-area: sl;
+  margin-top: 32px;
+}

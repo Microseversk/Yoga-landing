@@ -1,0 +1,130 @@
+@import "../../../../styles/mixins.scss";
+@import "../../../../styles/variables.scss";
+
+.container {
+  display: grid;
+  position: relative;
+  width: 285px;
+  height: 390px;
+  transition: all $transition;
+
+  border: 1px solid #d9d9d9;
+
+  grid-template-areas:
+    "name name"
+    "divider divider"
+    "text text"
+    "more date";
+  justify-content: center;
+  grid-template-rows: max-content min-content auto auto;
+
+  &::before {
+    content: "";
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    left: 50%;
+    border-radius: 50%;
+    border: 1px solid #d9d9d9;
+    background-color: $bg-color;
+    clip-path: circle(70% at 50% 100%);
+  }
+}
+
+.containerIsActive {
+  width: 387px;
+  height: 470px;
+  background-color: $accent-color;
+  color: $bg-color;
+
+  &::before {
+    width: 130px;
+    height: 130px;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 179px;
+    height: 171px;
+    background-image: url("/assets/Flower5.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.name {
+  grid-area: name;
+  margin-top: 78px;
+  position: relative;
+  justify-self: center;
+
+  &IsActive {
+    margin-top: 95px;
+  }
+}
+
+.divider {
+  margin-top: 16px;
+  grid-area: divider;
+  width: 82px;
+  height: 2px;
+  background-color: $accent-color;
+  justify-self: center;
+
+  &IsActive {
+    background-color: $bg-color;
+    margin-top: 24px;
+  }
+}
+
+.text {
+  grid-area: text;
+  margin-top: 16px;
+  width: 244px;
+  height: 142px;
+  font-size: 14px;
+  line-height: 17.5px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+
+  &IsActive {
+    width: 340px;
+    height: 219px;
+    margin-top: 24px;
+  }
+}
+
+.more {
+  grid-area: more;
+  font-size: 14px;
+  font-family: "Raleway 500";
+  text-decoration: underline;
+  align-self: end;
+  margin-bottom: 50px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.date {
+  grid-area: date;
+  font-size: 14px;
+  font-family: "Raleway 500";
+  justify-self: end;
+  align-self: end;
+  margin-bottom: 50px;
+}
+
+.imgContainer {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  transition: all $transition;
+  &IsActive {
+    color: $accent-color;
+  }
+}
