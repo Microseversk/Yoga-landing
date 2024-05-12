@@ -2,12 +2,14 @@ import FeedbackSVG from "../../../shared/svg/FeedbackSVG";
 import Typography from "../../../shared/typography/Typography";
 import styles from "./FeedbackItem.module.scss";
 
-export interface IFeedbackItemProps {
+export interface IFeedbackItemProps
+  extends React.HTMLAttributes<HTMLDivElement> {
   id: number;
   name: string;
   text: string;
   date: string;
   isActive: boolean;
+  className?: string;
   onMoreClick?: () => void;
 }
 
@@ -18,10 +20,11 @@ const FeedbackItem = ({
   text,
   date,
   onMoreClick,
+  className,
 }: IFeedbackItemProps) => {
   return (
     <div
-      className={`${styles.container} ${
+      className={`${styles.container} ${className} ${
         isActive ? styles.containerIsActive : ""
       }`}
     >
@@ -30,7 +33,7 @@ const FeedbackItem = ({
           isActive ? styles.imgContainerIsActive : ""
         }`}
       >
-        <FeedbackSVG number={id === 5 ? 1 : id % 5} className={styles.svg} />
+        <FeedbackSVG number={id - 1 || 3} className={styles.svg} />
       </div>
       <Typography
         variant={isActive ? "h4" : "p2"}

@@ -108,6 +108,10 @@
   margin-bottom: 50px;
   cursor: pointer;
   user-select: none;
+  transition: all $transition;
+  &:hover {
+    color: $accent-color;
+  }
 }
 
 .date {

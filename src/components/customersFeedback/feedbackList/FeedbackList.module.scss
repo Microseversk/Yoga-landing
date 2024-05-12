@@ -1,23 +1,41 @@
 .container {
   display: grid;
+  justify-content: space-between;
   grid-template-areas:
     "f1 f2 f3"
     "sl sl sl";
 }
 
+%f {
+  transition: all 1s;
+  animation: fadeIn 0.9s forwards;
+}
+
 .f1 {
+  @extend %f;
   grid-area: f1;
 }
 
 .f2 {
+  @extend %f;
   grid-area: f2;
 }
 
 .f3 {
+  @extend %f;
   grid-area: f3;
 }
 
 .slider {
   grid-area: sl;
   margin-top: 32px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

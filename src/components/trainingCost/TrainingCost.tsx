@@ -8,7 +8,7 @@ const TrainingCost = () => {
   console.log(cost?.price);
   if (isLoading) return <div>Loading...</div>;
   return (
-    <section className={styles.container} id="cost">
+    <section className={styles.container} number="cost">
       <h2 className={styles.h}>СТОИМОСТЬ НАШИХ ТРЕНИРОВОК</h2>
       <div className={styles.textContent}>
         <p>

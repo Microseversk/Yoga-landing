@@ -4,7 +4,7 @@ import TopContent from "./topContent/TopContent";
 
 const DirectionsInSub = () => {
   return (
-    <section className={styles.container} id="dirs">
+    <section className={styles.container} number="dirs">
       <TopContent />
       <BottomContent />
     </section>
