@@ -4,10 +4,10 @@
 .container {
   display: grid;
   position: relative;
+
   width: 285px;
   height: 390px;
   transition: all $transition;
-
   border: 1px solid #d9d9d9;
 
   grid-template-areas:
@@ -29,6 +29,10 @@
     border: 1px solid #d9d9d9;
     background-color: $bg-color;
     clip-path: circle(70% at 50% 100%);
+    @include respond(mobile) {
+      width: 96px;
+      height: 96px;
+    }
   }
 }
 
@@ -38,9 +42,23 @@
   background-color: $accent-color;
   color: $bg-color;
 
+  @include respond(tablet) {
+    width: 338px;
+    height: 421px;
+  }
+  @include respond(mobile) {
+    width: 300px;
+    height: 390px;
+  }
+
   &::before {
     width: 130px;
     height: 130px;
+
+    @include respond(mobile) {
+      width: 96px;
+      height: 96px;
+    }
   }
   &::after {
     content: "";
@@ -54,6 +72,14 @@
     bottom: -20px;
     left: 50%;
     transform: translateX(-50%);
+    @include respond(tablet) {
+      width: 140px;
+      height: 149px;
+      bottom: -30px;
+    }
+    @include respond(mobile) {
+      display: none;
+    }
   }
 }
 
@@ -65,6 +91,9 @@
 
   &IsActive {
     margin-top: 95px;
+    @include respond(mobile) {
+      margin-top: 33px * 2;
+    }
   }
 }
 
@@ -79,6 +108,9 @@
   &IsActive {
     background-color: $bg-color;
     margin-top: 24px;
+    @include respond(mobile) {
+      margin-top: 23px;
+    }
   }
 }
 
@@ -96,6 +128,14 @@
     width: 340px;
     height: 219px;
     margin-top: 24px;
+    @include respond(tablet) {
+      width: 301px;
+    }
+    @include respond(mobile) {
+      font-size: 13px;
+      width: 252px;
+      margin-top: 18px;
+    }
   }
 }
 
@@ -112,6 +152,14 @@
   &:hover {
     color: $accent-color;
   }
+
+  @include respond(tablet) {
+    margin-bottom: 20px;
+  }
+
+  @include respond(mobile) {
+    display: none;
+  }
 }
 
 .date {
@@ -121,6 +169,13 @@
   justify-self: end;
   align-self: end;
   margin-bottom: 50px;
+  @include respond(tablet) {
+    margin-bottom: 20px;
+  }
+  @include respond(mobile) {
+    margin-bottom: 30px;
+    font-size: 16px;
+  }
 }
 
 .imgContainer {

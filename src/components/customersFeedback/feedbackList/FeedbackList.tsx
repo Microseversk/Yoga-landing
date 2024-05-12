@@ -10,32 +10,35 @@ const FeedbackList = () => {
 
   return (
     <div className={styles.container}>
-      <FeedbackItem
-        className={styles.f1}
-        {...feedback[activeFeedback]}
-        isActive={true}
-        onMoreClick={() => setActiveFeedback(feedback[activeFeedback].id - 1)}
-      />
-      <FeedbackItem
-        className={styles.f2}
-        {...feedback[(activeFeedback + 1) % feedback.length]}
-        isActive={false}
-        onMoreClick={() =>
-          setActiveFeedback(
-            feedback[(activeFeedback + 1) % feedback.length].id - 1
-          )
-        }
-      />
-      <FeedbackItem
-        className={styles.f3}
-        {...feedback[(activeFeedback + 2) % feedback.length]}
-        isActive={false}
-        onMoreClick={() =>
-          setActiveFeedback(
-            feedback[(activeFeedback + 2) % feedback.length].id - 1
-          )
-        }
-      />
+      <div className={styles.f1}>
+        <FeedbackItem
+          {...feedback[activeFeedback]}
+          isActive={true}
+          onMoreClick={() => setActiveFeedback(feedback[activeFeedback].id - 1)}
+        />
+      </div>
+      <div className={styles.f2}>
+        <FeedbackItem
+          {...feedback[(activeFeedback + 1) % feedback.length]}
+          isActive={false}
+          onMoreClick={() =>
+            setActiveFeedback(
+              feedback[(activeFeedback + 1) % feedback.length].id - 1
+            )
+          }
+        />
+      </div>
+      <div className={styles.f3}>
+        <FeedbackItem
+          {...feedback[(activeFeedback + 2) % feedback.length]}
+          isActive={false}
+          onMoreClick={() =>
+            setActiveFeedback(
+              feedback[(activeFeedback + 2) % feedback.length].id - 1
+            )
+          }
+        />
+      </div>
       <Slider
         className={styles.slider}
         buttonPosition="left"

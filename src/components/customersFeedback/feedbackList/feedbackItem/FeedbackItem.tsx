@@ -2,8 +2,7 @@ import FeedbackSVG from "../../../shared/svg/FeedbackSVG";
 import Typography from "../../../shared/typography/Typography";
 import styles from "./FeedbackItem.module.scss";
 
-export interface IFeedbackItemProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface IFeedbackItemProps {
   id: number;
   name: string;
   text: string;
@@ -24,9 +23,9 @@ const FeedbackItem = ({
 }: IFeedbackItemProps) => {
   return (
     <div
-      className={`${styles.container} ${className} ${
+      className={`${styles.container} ${
         isActive ? styles.containerIsActive : ""
-      }`}
+      } ${className} `}
     >
       <div
         className={`${styles.imgContainer} ${

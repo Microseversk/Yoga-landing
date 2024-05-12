@@ -17,6 +17,7 @@
   }
   @include respond(mobile) {
     margin-top: 88px;
+    justify-content: center;
     grid-template-areas:
       "h"
       "feedback"
@@ -64,10 +65,10 @@
     margin-top: 60px;
   }
   @include respond(tablet) {
-    margin-top: 56px;
+    margin-top: 100px;
   }
 
   @include respond(mobile) {
-    margin-top: 36px;
+    margin-top: 84px;
   }
 }

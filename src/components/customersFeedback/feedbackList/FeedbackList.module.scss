@@ -1,9 +1,24 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/variables.scss";
+
 .container {
   display: grid;
   justify-content: space-between;
   grid-template-areas:
     "f1 f2 f3"
     "sl sl sl";
+
+  @include respond(tablet) {
+    align-items: center;
+    grid-template-areas:
+      "f1 f2"
+      "sl sl";
+  }
+  @include respond(mobile) {
+    grid-template-areas:
+      "f1"
+      "sl";
+  }
 }
 
 %f {
@@ -19,16 +34,33 @@
 .f2 {
   @extend %f;
   grid-area: f2;
+  @include respond(mobile) {
+    display: none;
+  }
 }
 
 .f3 {
   @extend %f;
   grid-area: f3;
+
+  @include respond(tablet) {
+    display: none;
+  }
+  @include respond(mobile) {
+    display: none;
+  }
 }
 
 .slider {
   grid-area: sl;
   margin-top: 32px;
+
+  @include respond(mobile) {
+    margin-top: 19px;
+  }
+  @include respond(mobile) {
+    margin-top: 12px;
+  }
 }
 
 @keyframes fadeIn {
