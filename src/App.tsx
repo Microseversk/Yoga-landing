@@ -1,3 +1,4 @@
+import AlwaysInTouch from "./components/alwaysInTouch/AlwaysInTouch";
 import Coaches from "./components/coaches/Coaches";
 import CustomersFeedback from "./components/customersFeedback/CustomersFeedback";
 import DirectionsInSub from "./components/directionsInSub/DirectionsInSub";
@@ -17,6 +18,7 @@ function App() {
       <Schedule />
       <Coaches />
       <CustomersFeedback />
+      <AlwaysInTouch />
     </main>
   );
 }

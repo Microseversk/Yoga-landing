@@ -1,0 +1,22 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.container {
+  margin-top: 120px;
+  display: flex;
+  justify-content: space-between;
+
+  @include respond(tablet) {
+    margin-top: 100px;
+  }
+
+  @include respond(tablet) {
+    margin-top: 88px;
+  }
+}
+
+.imgContainer {
+  width: 407px;
+  height: 501px;
+  background-image: url("/assets/alwaysInTouch/woman.png");
+}
