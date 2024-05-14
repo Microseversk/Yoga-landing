@@ -11,7 +11,7 @@ interface RoundedButtonProps {
 const RoundedButton = (props: RoundedButtonProps) => {
   return (
     <button
-      number={props.id}
+      id={props.id}
       onClick={props.onClick}
       className={
         props.selected

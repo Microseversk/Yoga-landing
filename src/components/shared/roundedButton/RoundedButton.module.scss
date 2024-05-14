@@ -15,8 +15,7 @@
 
   &:hover {
     cursor: pointer;
-    background-color: $accent-color;
-    color: $bg-color;
+    border-color: $accent-color;
   }
 
   @include respond(tablet) {
