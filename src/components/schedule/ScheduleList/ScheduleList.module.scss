@@ -38,9 +38,11 @@
   opacity: 0.5;
   cursor: pointer;
   user-select: none;
+  transition: all $transition;
 
   &:not(.active):hover {
     color: $accent-color;
+    scale: 1.1;
     &::after {
       content: "";
       position: absolute;
@@ -49,6 +51,7 @@
       bottom: -22px;
       @include respond(mobile) {
         bottom: -1px;
+        scale: 1;
       }
       transform: translateX(-50%);
       width: 0;
@@ -81,6 +84,7 @@
     bottom: -22px;
     @include respond(mobile) {
       bottom: -1px;
+      scale: 1;
     }
     left: 0;
 
