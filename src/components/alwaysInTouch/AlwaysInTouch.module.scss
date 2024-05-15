@@ -2,21 +2,74 @@
 @import "../../styles/variables.scss";
 
 .container {
-  margin-top: 120px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+
+  @include respond(desktop) {
+    margin-top: 120px;
+
+    grid-template-areas:
+      "h h"
+      "accordeon img";
+  }
 
   @include respond(tablet) {
     margin-top: 100px;
+    grid-template-columns: 338px auto;
+    grid-template-areas:
+      "h h"
+      "accordeon img";
   }
 
-  @include respond(tablet) {
+  @include respond(mobile) {
     margin-top: 88px;
+    grid-template-areas:
+      "h"
+      "img"
+      "accordeon";
+  }
+}
+.h {
+  width: 493px;
+  color: $accent-color;
+
+  @include respond(tablet) {
+    width: 298px;
+  }
+  @include respond(mobile) {
+    width: 326px;
+  }
+}
+.imgContainer {
+  grid-area: img;
+  align-self: flex-end;
+  width: 407px;
+  height: 501px;
+  background-image: url("/assets/alwaysInTouch/woman.webp");
+  background-size: cover;
+  justify-self: end;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 244px 244px 0px 0px;
+
+  @include respond(tablet) {
+    width: 338px;
+    height: 467.69px;
+  }
+
+  @include respond(mobile) {
+    height: 366px;
+    width: 100%;
+    margin-top: 56px;
   }
 }
 
-.imgContainer {
-  width: 407px;
-  height: 501px;
-  background-image: url("/assets/alwaysInTouch/woman.png");
+.accordeon {
+  grid-area: accordeon;
+  justify-self: start;
+  width: 100%;
+  margin-top: 72px;
+
+  @include respond(tablet) {
+    margin-top: 56px;
+  }
 }
