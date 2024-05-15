@@ -61,6 +61,11 @@ const ScheduleList = () => {
         </div>
       </div>
       <div className={style.container}>
+        <div className={style.titlesContainer}>
+          <div>Направление</div>
+          <div>Время</div>
+          <div>Длительность</div>
+        </div>
         {schedule
           .filter((item) => item.day === day)
           .map((item) =>

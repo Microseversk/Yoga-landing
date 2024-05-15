@@ -16,7 +16,7 @@ const ScheduleItem = (props: IScheduleItem) => {
         {props.time}
       </Typography>
       <Typography variant="p2" className={styles.duration}>
-        {props.duration} мин
+        {props.duration}
       </Typography>
       <Typography variant="p2" className={styles.coach}>
         {props.coach}
