@@ -2,7 +2,6 @@
 @import "../../styles/variables.scss";
 
 .container {
-  margin-bottom: 300px;
   align-items: center;
   display: grid;
   @include respond(desktop) {
@@ -155,5 +154,18 @@
   @include respond(mobile) {
     column-gap: 16px;
     margin-top: 24px;
+  }
+}
+
+.map {
+  grid-area: map;
+
+  margin-top: 53px;
+
+  @include respond(tablet) {
+    margin-top: 39px;
+  }
+  @include respond(mobile) {
+    margin-top: 46px;
   }
 }

@@ -4,6 +4,7 @@ import Input from "../shared/input/Input";
 import ContactsSvg from "../shared/svg/ContactsSVG";
 import Typography from "../shared/typography/Typography";
 import styles from "./YouCanFindUs.module.scss";
+import MapCard from "./map/MapCard";
 
 const YouCanFindUs = () => {
   return (
@@ -35,6 +36,9 @@ const YouCanFindUs = () => {
         <div>
           <ContactsSvg variant={"tg"} />
         </div>
+      </div>
+      <div className={styles.map}>
+        <MapCard />
       </div>
     </section>
   );
