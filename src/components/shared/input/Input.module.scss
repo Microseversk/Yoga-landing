@@ -1,0 +1,15 @@
+.container {
+  font-family: "Raleway 400";
+  height: 21px;
+  background-color: inherit;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding-bottom: 6px;
+  border-bottom: #98958b 1px solid;
+}
+
+.container::placeholder {
+  font-size: 14px;
+  font-family: "Raleway 400";
+}

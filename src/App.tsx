@@ -6,6 +6,7 @@ import Home from "./components/mainSection/Mainsection";
 import Navbar from "./components/navbar/Navbar";
 import Schedule from "./components/schedule/Schedule";
 import TrainingCost from "./components/trainingCost/TrainingCost";
+import YouCanFindUs from "./components/youCanFindUs/YouCanFindUs";
 import "./index.scss";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Coaches />
       <CustomersFeedback />
       <AlwaysInTouch />
+      <YouCanFindUs />
     </main>
   );
 }

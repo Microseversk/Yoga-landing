@@ -1,0 +1,25 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/variables.scss";
+
+.container {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+
+  @include respond(tablet) {
+    column-gap: 16px;
+  }
+}
+
+.checkBox {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #98958b;
+  border-radius: 2px;
+}
+
+.label {
+  width: 145px;
+  cursor: pointer;
+  user-select: none;
+}

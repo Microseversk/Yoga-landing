@@ -1,0 +1,159 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.container {
+  margin-bottom: 300px;
+  align-items: center;
+  display: grid;
+  @include respond(desktop) {
+    margin-top: 120px;
+
+    grid-template-areas:
+      "h h h h"
+      "inputName inputPhone check btn"
+      "map map map map";
+  }
+
+  @include respond(tablet) {
+    margin-top: 100px;
+    grid-template-areas:
+      "h h h"
+      "inputName inputPhone check"
+      " btn btn icons"
+      "map map map";
+  }
+
+  @include respond(mobile) {
+    margin-top: 88px;
+    grid-template-areas:
+      "h h"
+      "p p"
+      "inputName inputPhone"
+      "inputQuestion inputQuestion"
+      "check check"
+      "btn icons"
+      "map map";
+  }
+}
+
+.h {
+  grid-area: h;
+  color: $accent-color;
+}
+
+.p {
+  grid-area: p;
+  display: none;
+
+  @include respond(mobile) {
+    display: block;
+    font-family: "Raleway 600";
+    font-size: 15px;
+    margin-top: 54px;
+  }
+}
+
+.inputName {
+  grid-area: inputName;
+  width: 300px;
+  margin-top: 56px;
+
+  @include respond(tablet) {
+    width: 183px;
+  }
+
+  @include respond(mobile) {
+    width: 154px;
+    margin-top: 24px;
+  }
+}
+
+.inputPhone {
+  grid-area: inputPhone;
+  width: 300px;
+  margin-top: 56px;
+  margin-left: 40px;
+  @include respond(tablet) {
+    width: 228px;
+    margin-left: 70px;
+  }
+  @include respond(mobile) {
+    width: 153px;
+    margin-top: 24px;
+  }
+}
+
+.inputQuestion {
+  display: none;
+  grid-area: inputQuestion;
+
+  @include respond(mobile) {
+    display: block;
+    width: 100%;
+    margin-top: 40px;
+  }
+}
+
+.checkBox {
+  grid-area: check;
+  align-self: center;
+  margin-top: 56px;
+
+  @include respond(tablet) {
+    margin-left: 37px;
+  }
+  @include respond(mobile) {
+    margin-top: 24px;
+  }
+}
+
+.btn {
+  grid-area: btn;
+  cursor: pointer;
+  margin-top: 65px;
+  width: 240px;
+  height: 55px;
+
+  @include respond(tablet) {
+    height: auto;
+  }
+  @include respond(mobile) {
+    width: 154px;
+    margin-top: 24px;
+    padding: 0;
+  }
+}
+
+.icons {
+  display: flex;
+  grid-area: icons;
+  justify-self: end;
+  color: $accent-color;
+
+  margin-top: 65px;
+  column-gap: 10px;
+  & > div {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 1px solid $accent-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all $transition;
+  }
+
+  & > div:hover {
+    background-color: $accent-color;
+    color: $bg-color;
+  }
+
+  @include respond(desktop) {
+    display: none;
+  }
+
+  @include respond(mobile) {
+    column-gap: 16px;
+    margin-top: 24px;
+  }
+}
