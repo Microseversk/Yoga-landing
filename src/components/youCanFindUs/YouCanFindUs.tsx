@@ -8,7 +8,7 @@ import MapCard from "./map/MapCard";
 
 const YouCanFindUs = () => {
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="find">
       <Typography variant="h2" className={styles.h}>
         НАС МОЖНО НАЙТИ
       </Typography>

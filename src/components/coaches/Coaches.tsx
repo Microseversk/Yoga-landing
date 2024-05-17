@@ -4,7 +4,7 @@ import CoachSlider from "./coachSlider/CoachSlider";
 
 const Coaches = () => {
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="coaches">
       <Typography variant="h2" className={styles.h}>
         Эксперты <br />в области тела и разума
       </Typography>

@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <NavbarContext.Provider value={{ status: isOpen, toggleOpen }}>
-      <header className={styles.header}>
+      <header className={styles.header} id="header">
         <Logo />
         <NavList />
         <div className={styles.headerRightSide}>

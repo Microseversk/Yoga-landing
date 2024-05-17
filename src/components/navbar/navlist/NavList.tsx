@@ -31,7 +31,7 @@ const NavList = () => {
         </a>
       </li>
       <li>
-        <a href="#" onClick={() => toggleOpen("hide")}>
+        <a href="#find" onClick={() => toggleOpen("hide")}>
           <Typography variant="menu">КОНТАКТЫ</Typography>
         </a>
       </li>

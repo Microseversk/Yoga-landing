@@ -1,0 +1,155 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.container {
+  margin-top: 120px;
+  padding: 0 10px;
+  display: grid;
+  color: $bg-color;
+  grid-template-areas:
+    "info nav icons"
+    "personal logo policy";
+  background-color: $accent-color;
+
+  @include respond(tablet) {
+    margin-top: 100px;
+    grid-template-areas:
+      "nav logo info"
+      "icons logo policy"
+      "icons logo personal";
+    grid-template-columns: min-content auto max-content;
+    padding-bottom: 23px;
+  }
+  @include respond(mobile) {
+    margin-top: 88px;
+    grid-template-areas:
+      "logo icons"
+      "nav info"
+      "nav personal"
+      "nav policy";
+    padding: 0 23px;
+    padding-bottom: 28px;
+  }
+}
+
+.info {
+  margin-top: 40px;
+  grid-area: info;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  font-size: 12px;
+
+  @include respond(tablet) {
+    margin-top: 19px;
+    justify-self: end;
+    width: 132px;
+    row-gap: 16px;
+  }
+  @include respond(mobile) {
+    justify-self: end;
+    width: 132px;
+  }
+}
+
+.nav {
+  margin-top: 40px;
+  grid-area: nav;
+  display: flex;
+  column-gap: 26px;
+  font-size: 12px;
+  justify-self: center;
+  @include respond(tablet) {
+    margin-top: 19px;
+    flex-direction: column;
+    row-gap: 14px;
+    justify-self: start;
+  }
+  @include respond(mobile) {
+    flex-direction: column;
+    row-gap: 14px;
+    justify-self: start;
+  }
+}
+
+.icons {
+  grid-area: icons;
+  display: flex;
+  column-gap: 10px;
+  justify-self: end;
+  align-self: center;
+
+  .icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $bg-color;
+    border-radius: 50%;
+    transition: all $transition;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $bg-color;
+      color: $accent-color;
+    }
+  }
+
+  @include respond(tablet) {
+    justify-self: start;
+    align-self: end;
+  }
+}
+
+.personal {
+  margin-top: 40px;
+  grid-area: personal;
+  @include respond(tablet) {
+    margin-top: 12px;
+    text-align: end;
+    padding-left: 5px;
+  }
+  @include respond(mobile) {
+    text-align: center;
+    padding-left: 5px;
+    font-size: 9px;
+  }
+}
+
+.logo {
+  grid-area: logo;
+  display: flex;
+  column-gap: 16px;
+  align-items: center;
+  justify-self: center;
+
+  & > svg {
+    width: 47px;
+  }
+
+  & > span {
+    color: $bg-color;
+    font-family: "Bookman 300";
+    font-size: 27px;
+    @include respond(mobile) {
+      font-size: 16px;
+    }
+  }
+  @include respond(tablet) {
+    margin-left: 50px;
+  }
+  @include respond(mobile) {
+    column-gap: 8px;
+  }
+}
+
+.policy {
+  margin-top: 40px;
+  justify-self: end;
+  grid-area: policy;
+
+  @include respond(mobile) {
+    font-size: 9px;
+  }
+}

@@ -4,7 +4,7 @@ import Accordeon from "./accordeon/Accordeon";
 
 const AlwaysInTouch = () => {
   return (
-    <section className={style.container}>
+    <section className={style.container} id="FAQ">
       <Typography variant="h2" className={style.h}>
         Всегда на связи <br />c клиентом{" "}
       </Typography>
