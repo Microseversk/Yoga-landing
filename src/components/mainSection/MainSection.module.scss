@@ -85,6 +85,7 @@
 .btnContainer {
   grid-area: btn;
   position: relative;
+  cursor: pointer;
 
   @include respond(desktop) {
     margin-left: 65%;
