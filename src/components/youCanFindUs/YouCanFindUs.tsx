@@ -16,7 +16,7 @@ const YouCanFindUs = () => {
       <Input placeholder="Имя" type="name" className={styles.inputName} />
       <Input
         placeholder="Номер телефона"
-        type="phone"
+        type="tel"
         className={styles.inputPhone}
       />
       <CheckBox

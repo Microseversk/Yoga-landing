@@ -59,6 +59,10 @@
   column-gap: 26px;
   font-size: 12px;
   justify-self: center;
+
+  & > a {
+    color: $bg-color;
+  }
   @include respond(tablet) {
     margin-top: 19px;
     flex-direction: column;
@@ -105,6 +109,11 @@
 .personal {
   margin-top: 40px;
   grid-area: personal;
+
+  & > span:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
   @include respond(tablet) {
     margin-top: 12px;
     text-align: end;
@@ -148,6 +157,11 @@
   margin-top: 40px;
   justify-self: end;
   grid-area: policy;
+
+  & > span:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
 
   @include respond(mobile) {
     font-size: 9px;

@@ -15,7 +15,13 @@
   width: 16px;
   height: 16px;
   border: 1px solid #98958b;
+
   border-radius: 2px;
+
+  &IsError {
+    appearance: none;
+    border-color: red; // Цвет границы для выбранного чекбокса
+  }
 }
 
 .label {

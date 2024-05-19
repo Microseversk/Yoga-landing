@@ -1,0 +1,59 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/variables.scss";
+
+.container {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.content {
+  display: flex;
+  padding: 30px 50px;
+  flex-direction: column;
+  width: 339px;
+  height: 460px;
+  background-color: $bg-color;
+  border-radius: 30px;
+  border: 1px solid #98958b;
+}
+
+.h {
+  font-family: "NewYorkerC 400";
+  color: $accent-color;
+  font-size: 24px;
+  line-height: 28.8px;
+}
+
+.form {
+  margin-top: 30px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+.input {
+  width: 100%;
+  font-size: 13px;
+}
+
+.btn {
+  height: 55px;
+  padding: 0;
+  background-color: $bg-color;
+  color: $accent-color;
+  cursor: pointer;
+  &:hover {
+    background-color: $accent-color;
+    color: $bg-color;
+  }
+}
+
+.policy {
+}

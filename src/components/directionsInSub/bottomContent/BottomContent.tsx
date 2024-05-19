@@ -17,7 +17,6 @@ const BottomContent = () => {
   }, [isLoading, directions]);
 
   if (isLoading) {
-    console.log("Loading");
     return <div>Loading...</div>;
   }
 
@@ -38,7 +37,6 @@ const BottomContent = () => {
 
   const onNextClick = () => {
     setCurrentDirection(directions[currentDirection?.id!! % directions.length]);
-    console.log(currentDirection?.id!! == directions.length);
     btnsContainer.current?.scrollTo({
       left:
         currentDirection?.id!! == directions.length

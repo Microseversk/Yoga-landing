@@ -49,14 +49,14 @@ const Footer = () => {
         </div>
       </div>
       <Typography variant="p3" className={styles.personal}>
-        Согласие на обработку персональных данных
+        <span>Согласие на обработку персональных данных</span>
       </Typography>
       <div className={styles.logo}>
         <LogoSVG />
         <span>BALANCE</span>
       </div>
       <Typography variant="p3" className={styles.policy}>
-        Политика конфиденциальности
+        <span>Политика конфиденциальности</span>
       </Typography>
     </footer>
   );

@@ -5,7 +5,6 @@ import Cost from "./Cost/Cost";
 import styles from "./TrainingCost.module.scss";
 const TrainingCost = () => {
   const { cost, isLoading } = useCost();
-  console.log(cost?.price);
   if (isLoading) return <div>Loading...</div>;
   return (
     <section className={styles.container} id="cost">
@@ -26,7 +25,6 @@ const TrainingCost = () => {
           <Cost base={cost?.base} />
         </div>
         {cost?.price.map((price, index) => {
-          console.log(price);
           return (
             <Cost
               key={index}
