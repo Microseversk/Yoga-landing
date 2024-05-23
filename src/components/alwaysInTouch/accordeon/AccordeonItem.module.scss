@@ -87,6 +87,8 @@
 }
 
 .question {
+  align-self: center;
+  line-height: normal;
   grid-area: question;
   cursor: pointer;
   @include respond(tablet) {

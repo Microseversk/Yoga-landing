@@ -1,10 +1,21 @@
 @import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
-
-.container {
+.footerContainer {
+  display: flex;
+  justify-content: center;
+  background-color: $accent-color;
   margin-top: 120px;
+  @include respond(tablet) {
+    margin-top: 100px;
+  }
+  @include respond(mobile) {
+    margin-top: 88px;
+  }
+}
+.container {
   padding: 0 10px;
   display: grid;
+  width: 1194px;
   color: $bg-color;
   grid-template-areas:
     "info nav icons"
@@ -12,7 +23,7 @@
   background-color: $accent-color;
 
   @include respond(tablet) {
-    margin-top: 100px;
+    max-width: 697px;
     grid-template-areas:
       "nav logo info"
       "icons logo policy"
@@ -21,7 +32,7 @@
     padding-bottom: 23px;
   }
   @include respond(mobile) {
-    margin-top: 88px;
+    max-width: 345px;
     grid-template-areas:
       "logo icons"
       "nav info"
