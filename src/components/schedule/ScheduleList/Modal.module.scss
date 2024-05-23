@@ -14,14 +14,40 @@
 }
 
 .content {
+  position: relative;
   display: flex;
   padding: 30px 50px;
+  justify-content: center;
   flex-direction: column;
   width: 339px;
   height: 460px;
   background-color: $bg-color;
   border-radius: 30px;
   border: 1px solid #98958b;
+
+  &IsSubmitted::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: 12px;
+    left: 0;
+    background-image: url("/assets/flower6.svg");
+  }
+}
+
+.btnClose {
+  position: absolute;
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  right: 32px;
+  top: 32px;
+  background-size: contain;
+
+  background-image: url("/assets/close.svg");
 }
 
 .h {
@@ -56,4 +82,19 @@
 }
 
 .policy {
+}
+
+.subH {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  color: $accent-color;
+  font-family: "NewYorkerC 400";
+  font-size: 20px;
+}
+
+.subP {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 38px;
 }

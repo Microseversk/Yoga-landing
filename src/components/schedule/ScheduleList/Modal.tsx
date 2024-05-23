@@ -28,6 +28,7 @@ const Modal: React.FC<{
   dir?: string;
 }> = ({ portal, isOpened, setIsOpened, dir }) => {
   const [errors, setErrors] = useState<{ [key in keyof IBook]?: string }>({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState<IBook>({
     direction: dir || "",
     phone: "",
@@ -35,12 +36,24 @@ const Modal: React.FC<{
     policy: false,
   });
 
+  const handleClose = () => {
+    setErrors({});
+    setFormData({
+      direction: dir || "",
+      comment: "",
+      phone: "",
+      policy: false,
+    });
+    setIsOpened(false);
+    setIsSubmitted(false);
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       await schema.validateSync(formData, { abortEarly: false });
       console.log(formData);
-      setIsOpened(false);
+      setIsSubmitted(true);
     } catch (validationErrors) {
       const newErrors: { [key in keyof IBook]?: string } = {};
       if (validationErrors instanceof yup.ValidationError) {
@@ -53,65 +66,79 @@ const Modal: React.FC<{
   };
   if (!isOpened) return null;
   return ReactDOM.createPortal(
-    <div
-      className={styles.container}
-      onClick={() => {
-        setErrors({});
-        setFormData({
-          direction: dir || "",
-          comment: "",
-          phone: "",
-          policy: false,
-        });
-        setIsOpened(false);
-      }}
-    >
-      <div onClick={(e) => e.stopPropagation()} className={styles.content}>
-        <span className={styles.h}>
-          ЗАПИСАТЬСЯ <br /> НА ТРЕНИРОВКУ
-        </span>
-        <form className={styles.form} onSubmit={handleSubmit} id="form">
-          <Input
-            placeholder="Направление"
-            className={styles.input}
-            disabled
-            value={formData.direction}
-            error={errors.direction}
-            onChange={(e) =>
-              setFormData({ ...formData, direction: e.target.value })
-            }
-          />
-          <Input
-            placeholder="Номер телефона"
-            className={styles.input}
-            error={errors.phone}
-            value={formData.phone}
-            onChange={(e) =>
-              setFormData({ ...formData, phone: e.target.value })
-            }
-          />
-          <Input
-            placeholder="Комментарий"
-            className={styles.input}
-            error={errors.comment}
-            value={formData.comment}
-            onChange={(e) =>
-              setFormData({ ...formData, comment: e.target.value })
-            }
-          />
-          <Button variant="feedback" type="submit" className={styles.btn}>
-            ОТПРАВИТЬ
-          </Button>
-          <CheckBox
-            label="принимаю условия политики конфиденциальности"
-            className={styles.policy}
-            checked={formData.policy}
-            isError={errors.policy === "Подтвердите согласие"}
-            onChange={(e) =>
-              setFormData({ ...formData, policy: e.target.checked })
-            }
-          />
-        </form>
+    <div className={`${styles.container}`} onClick={() => handleClose()}>
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className={`${styles.content} ${
+          isSubmitted ? styles.contentIsSubmitted : ""
+        }`}
+      >
+        {isSubmitted ? (
+          <>
+            <div
+              className={styles.btnClose}
+              onClick={() => handleClose()}
+            ></div>
+            <span className={styles.subH}>
+              СПАСИБО! <br /> ВАША ЗАЯВКА ПРИНЯТА
+            </span>
+            <span className={styles.subP}>
+              Наш менеджер свяжется в вами в ближайшее время
+            </span>
+          </>
+        ) : (
+          <>
+            <div
+              className={styles.btnClose}
+              onClick={() => handleClose()}
+            ></div>
+            <span className={styles.h}>
+              ЗАПИСАТЬСЯ <br /> НА ТРЕНИРОВКУ
+            </span>
+            <form className={styles.form} onSubmit={handleSubmit} id="form">
+              <Input
+                placeholder="Направление"
+                className={styles.input}
+                disabled
+                value={formData.direction}
+                error={errors.direction}
+                onChange={(e) =>
+                  setFormData({ ...formData, direction: e.target.value })
+                }
+              />
+              <Input
+                placeholder="Номер телефона"
+                className={styles.input}
+                error={errors.phone}
+                value={formData.phone}
+                onChange={(e) =>
+                  setFormData({ ...formData, phone: e.target.value })
+                }
+              />
+              <Input
+                placeholder="Комментарий"
+                className={styles.input}
+                error={errors.comment}
+                value={formData.comment}
+                onChange={(e) =>
+                  setFormData({ ...formData, comment: e.target.value })
+                }
+              />
+              <Button variant="feedback" type="submit" className={styles.btn}>
+                ОТПРАВИТЬ
+              </Button>
+              <CheckBox
+                label="принимаю условия политики конфиденциальности"
+                className={styles.policy}
+                checked={formData.policy}
+                isError={errors.policy === "Подтвердите согласие"}
+                onChange={(e) =>
+                  setFormData({ ...formData, policy: e.target.checked })
+                }
+              />
+            </form>
+          </>
+        )}
       </div>
     </div>,
     portal
